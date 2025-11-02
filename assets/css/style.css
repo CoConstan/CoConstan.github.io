@@ -1,0 +1,46 @@
+/* ===== TOC (plan de la page) ===== */
+#toc-container {
+    position: fixed;
+    top: 100px;              /* distance depuis le haut */
+    right: 40px;             /* distance depuis la droite */
+    width: 260px;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+    border: 1px solid var(--global-border-color);
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  
+  #toc-container .toc-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--global-theme-color);
+  }
+  
+  #toc-container ul {
+    list-style: none;
+    padding-left: 10px;
+    margin: 0;
+  }
+  
+  #toc-container a {
+    text-decoration: none;
+    color: var(--global-text-color);
+    transition: color 0.2s;
+  }
+  
+  #toc-container a:hover {
+    color: var(--global-theme-color);
+  }
+  
+  /* Version mobile : cacher le TOC */
+  @media (max-width: 1000px) {
+    #toc-container {
+      display: none;
+    }
+  }

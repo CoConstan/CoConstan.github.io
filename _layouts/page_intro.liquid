@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<style>
+/* Sidebar indépendante */
+.sidebar {
+  width: 220px;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  background: var(--global-bg-color);       /* fond */
+  border: 1px solid var(--global-border-color); /* bordure */
+  color: var(--global-text-color);          /* texte */
+  padding: 15px;
+  border-radius: 8px; /* arrondir un peu si tu veux */
+}
+
+.sidebar a {
+  color: var(--global-text-color);          /* liens adaptatifs */
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: var(--global-theme-color);         /* couleur du thème */
+}
+
+.post {}
+</style>
+
+<!-- Barre latérale -->
+<nav class="sidebar">
+  <h3>Menu</h3>
+  <ul>
+    <li><a href="{{ site.baseurl }}/projects/Intro_python_ADD">Intro Python</a></li>
+    <li><a href="{{ site.baseurl }}/projects/Manipulation_ADD">Manipulation</a></li>
+    <li><a href="{{ site.baseurl }}/projects/Visualisation_ADD">Visualisation</a></li>
+    <li><a href="{{ site.baseurl }}/projects/Modelisation_ADD">Modelisation</a></li>
+  </ul>
+</nav>
+
+<!-- Contenu principal -->
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+
+  <article>
+    {{ content }}
+  </article>
+
+  {% if page.related_publications %}
+    <h2>References</h2>
+    <div class="publications">
+      {% bibliography --cited_in_order %}
+    </div>
+  {% endif %}
+
+  {% if site.giscus and page.giscus_comments %}
+    {% include giscus.liquid %}
+  {% endif %}
+</div>
