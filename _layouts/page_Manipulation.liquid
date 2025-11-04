@@ -12,15 +12,15 @@ layout: default
 <style>
 /* Sidebar indépendante */
 .sidebar {
-  width: 300px;
+  width: 250px;
   position: fixed;
   top: 100px;
   left: 20px;
   background: var(--global-bg-color);       /* fond */
   border: 1px solid var(--global-border-color); /* bordure */
   color: var(--global-text-color);          /* texte */
-  padding: 15px;
-  border-radius: 8px; /* arrondir un peu si tu veux */
+  padding: 0px;
+  border-radius: 0px; /* arrondir un peu si tu veux */
 }
 
 .sidebar a {
@@ -32,7 +32,11 @@ layout: default
   color: var(--global-theme-color);         /* couleur du thème */
 }
 
-.post {}
+.post {
+  max-width: 1500px;   /* augmente selon ton besoin */
+  margin: 0 auto;     /* centre le contenu horizontalement */
+  padding: 20px;      /* optionnel : ajoute un peu d'espace autour */
+}
 </style>
 
 <style>
@@ -119,9 +123,9 @@ layout: default
     <p class="post-description">{{ page.description }}</p>
   </header>
 
-  <article>
-    {{ content }}
-  </article>
+<article style="text-align: justify; text-justify: inter-word">
+  {{ content }}
+</article>
 
   {% if page.related_publications %}
     <h2>References</h2>

@@ -5,7 +5,7 @@ description:
 img: assets/img/12.jpg
 importance: 4
 category: ADD
-related_publications: True
+related_publications: False
 ---
 
 # 1 **Introdution**
@@ -74,6 +74,78 @@ emissions = pd.read_csv(url)
 emissions.head(2)
 ```
 
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>INSEE commune</th>
+<th>Commune</th>
+<th>Agriculture</th>
+<th>Autres transports</th>
+<th>Autres transports international</th>
+<th>CO2 biomasse hors-total</th>
+<th>Déchets</th>
+<th>Energie</th>
+<th>Industrie hors-énergie</th>
+<th>Résidentiel</th>
+<th>Routier</th>
+<th>Tertiaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>01001</td>
+<td>L'ABERGEMENT-CLEMENCIAT</td>
+<td>3711.425991</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>432.751835</td>
+<td>101.430476</td>
+<td>2.354558</td>
+<td>6.911213</td>
+<td>309.358195</td>
+<td>793.156501</td>
+<td>367.036172</td>
+</tr>
+<tr>
+<th>1</th>
+<td>01002</td>
+<td>L'ABERGEMENT-DE-VAREY</td>
+<td>475.330205</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>140.741660</td>
+<td>140.675439</td>
+<td>2.354558</td>
+<td>6.911213</td>
+<td>104.866444</td>
+<td>348.997893</td>
+<td>112.934207</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+
+Nous allons maintenant ajouter une colonne pour le code département extrait du code INSEE de la commune et identifier les colonnes correspondant aux secteurs d’activité.
+
 ```python
 secteurs = emissions.select_dtypes(include='number').columns
 emissions["dep"] = emissions["INSEE commune"].str[:2]
@@ -87,9 +159,105 @@ filosofi = download_file("FILOSOFI_COM_2016")
 filosofi.head(2)
 ```
 
-Pandas a géré automatiquement les types de variables. Il le fait relativement bien, mais une vérification est toujours utile pour les variables qui ont un statut spécifique.
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-Pour les variables qui ne sont pas en type float alors qu’elles devraient l’être, on modifie leur type.
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>CODGEO</th>
+<th>LIBGEO</th>
+<th>NBMENFISC16</th>
+<th>NBPERSMENFISC16</th>
+<th>MED16</th>
+<th>PIMP16</th>
+<th>TP6016</th>
+<th>TP60AGE116</th>
+<th>TP60AGE216</th>
+<th>TP60AGE316</th>
+<th>...</th>
+<th>PPEN16</th>
+<th>PPAT16</th>
+<th>PPSOC16</th>
+<th>PPFAM16</th>
+<th>PPMINI16</th>
+<th>PPLOGT16</th>
+<th>PIMPOT16</th>
+<th>D116</th>
+<th>D916</th>
+<th>RD16</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>01001</td>
+<td>L'Abergement-Clémenciat</td>
+<td>313</td>
+<td>795.5</td>
+<td>22679</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>1</th>
+<td>01002</td>
+<td>L'Abergement-de-Varey</td>
+<td>101</td>
+<td>248</td>
+<td>24382.083333333336</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+<p>2 rows × 29 columns</p>
+</div>
+</div>
+
+Pandas a géré automatiquement les types de variables. Il le fait relativement bien, mais une vérification est toujours utile pour les variables qui ont un statut spécifique. Pour les variables qui ne sont pas en type float alors qu’elles devraient l’être, on modifie leur type.
+
 ```python
 filosofi = (filosofi.astype({c: "float" for c in filosofi.columns[2:]}))
 ```
@@ -111,7 +279,98 @@ emissions_totales['emissions (%)'] = 100*emissions_totales['emissions']/emission
 emissions_totales.sort_values("emissions", ascending = False).round()
 ```
 
-Nous pouvons voir que les secteurs les plus émetteurs, à savoir le transport, l’agriculture et l’industrie, hors énergie. Le fait que l’énergie soit relativement peu émettrice s’explique bien du fait du mix énergétique français où le nucléaire représente une majorité de la production électrique. 
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>secteur</th>
+<th>emissions</th>
+<th>emissions (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>8</th>
+<td>Routier</td>
+<td>126493164.0</td>
+<td>24.0</td>
+</tr>
+<tr>
+<th>0</th>
+<td>Agriculture</td>
+<td>87909694.0</td>
+<td>17.0</td>
+</tr>
+<tr>
+<th>6</th>
+<td>Industrie hors-énergie</td>
+<td>83573677.0</td>
+<td>16.0</td>
+</tr>
+<tr>
+<th>7</th>
+<td>Résidentiel</td>
+<td>63841398.0</td>
+<td>12.0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>CO2 biomasse hors-total</td>
+<td>63519311.0</td>
+<td>12.0</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Tertiaire</td>
+<td>39562729.0</td>
+<td>7.0</td>
+</tr>
+<tr>
+<th>5</th>
+<td>Energie</td>
+<td>22852034.0</td>
+<td>4.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Autres transports international</td>
+<td>22238569.0</td>
+<td>4.0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Déchets</td>
+<td>14703580.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Autres transports</td>
+<td>6535446.0</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+
+Nous pouvons voir que les secteurs les plus émetteurs, à savoir le transport, l’agriculture et l’industrie hors énergie. Le fait que l’énergie soit relativement peu émettrice s’explique bien du fait du mix énergétique français où le nucléaire représente une majorité de la production électrique. 
 
 Mais qu’en est-il du profil d’émission des différents départements ?
 Pour répondre à cette question, il sera nécessaire d’agréger les données au niveau départemental.
@@ -129,14 +388,190 @@ import requests
 from io import StringIO
 import pandas as pd
 cog_2023 = pd.read_csv(StringIO(response.text))
-communes = cog_2023.loc[cog_2023['TYPECOM']=="COM"]
+communes = cog_2023.loc[cog_2023['TYPECOM']=="COM"] # on sélectionne uniquement les communes (pour eviter les arrondissements de Paris, Lyon, Marseille)
 communes.loc[:, ['COM', 'DEP', 'REG']].nunique()
 ```
-On obtient une serie indexée. Ce n'est pas pratique, on prefère un DataFrame. On utilise donc la méthode `reset_index()`.
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>COM    34945
+DEP      101
+REG       18
+dtype: int64</pre>
+</div>
+
+On obtient le nombre de communes, départements et régions en France. On peut maintenant compter le nombre de communes par département.
+
+```python
+communes.groupby('DEP').agg({'COM': 'nunique'})
+```
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>COM</th>
+</tr>
+<tr>
+<th>DEP</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>01</th>
+<td>392</td>
+</tr>
+<tr>
+<th>02</th>
+<td>798</td>
+</tr>
+<tr>
+<th>03</th>
+<td>317</td>
+</tr>
+<tr>
+<th>04</th>
+<td>198</td>
+</tr>
+<tr>
+<th>05</th>
+<td>162</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+</tr>
+<tr>
+<th>971</th>
+<td>32</td>
+</tr>
+<tr>
+<th>972</th>
+<td>34</td>
+</tr>
+<tr>
+<th>973</th>
+<td>22</td>
+</tr>
+<tr>
+<th>974</th>
+<td>24</td>
+</tr>
+<tr>
+<th>976</th>
+<td>17</td>
+</tr>
+</tbody>
+</table>
+<p>101 rows × 1 columns</p>
+</div>
+</div>
+
+On obtient une serie indexée. Ce n'est pas pratique, on prefère un DataFrame. On utilise donc la méthode `reset_index()`. Pour finir, on trie les départements par nombre de communes décroissant avec la méthode `sort_values()`.
 
 ```python
 communes.groupby('DEP').agg({'COM': 'nunique'}).reset_index().sort_values('COM', ascending = False)
 ```
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>DEP</th>
+<th>COM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>62</th>
+<td>62</td>
+<td>890</td>
+</tr>
+<tr>
+<th>1</th>
+<td>02</td>
+<td>798</td>
+</tr>
+<tr>
+<th>80</th>
+<td>80</td>
+<td>772</td>
+</tr>
+<tr>
+<th>57</th>
+<td>57</td>
+<td>725</td>
+</tr>
+<tr>
+<th>76</th>
+<td>76</td>
+<td>708</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>96</th>
+<td>971</td>
+<td>32</td>
+</tr>
+<tr>
+<th>99</th>
+<td>974</td>
+<td>24</td>
+</tr>
+<tr>
+<th>98</th>
+<td>973</td>
+<td>22</td>
+</tr>
+<tr>
+<th>100</th>
+<td>976</td>
+<td>17</td>
+</tr>
+<tr>
+<th>75</th>
+<td>75</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>101 rows × 2 columns</p>
+</div>
+</div>
+
 
 ## 3.2 Exemple 2: agrégation par groupe
 
@@ -145,14 +580,109 @@ Pour illustrer l'utilisation d'agréggats, nous allons utilisé le jeu de donné
 Il y a deux manières de faire cela : une implicite et une explicite.
 
 ```python
-# Implicite => il faut faire attention à l'ordre des opérations
+# On commence par créer la variable "dep"
+filosofi["dep"] = filosofi["CODGEO"].str[:2]
+# Implicite => il faut faire attention à l'ordre des opérations (renvoie une série)
 filosofi.groupby('dep')['NBPERSMENFISC16'].sum()
 ```
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>dep
+01     613088.0
+02     514249.0
+03     329435.0
+04     156537.5
+05     133992.5
+        ...    
+92    1583682.0
+93    1586664.5
+94    1345977.0
+95    1226059.0
+97    1191947.0
+Name: NBPERSMENFISC16, Length: 97, dtype: float64</pre>
+</div>
+
 
 ```python
-# Explicite => plus verbeux mais plus clair
+# Explicite => plus verbeux mais plus clair (renvoie un DataFrame)
 filosofi.groupby('dep').agg({'NBPERSMENFISC16': 'sum'})
 ```
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>NBPERSMENFISC16</th>
+</tr>
+<tr>
+<th>dep</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>01</th>
+<td>613088.0</td>
+</tr>
+<tr>
+<th>02</th>
+<td>514249.0</td>
+</tr>
+<tr>
+<th>03</th>
+<td>329435.0</td>
+</tr>
+<tr>
+<th>04</th>
+<td>156537.5</td>
+</tr>
+<tr>
+<th>05</th>
+<td>133992.5</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+</tr>
+<tr>
+<th>92</th>
+<td>1583682.0</td>
+</tr>
+<tr>
+<th>93</th>
+<td>1586664.5</td>
+</tr>
+<tr>
+<th>94</th>
+<td>1345977.0</td>
+</tr>
+<tr>
+<th>95</th>
+<td>1226059.0</td>
+</tr>
+<tr>
+<th>97</th>
+<td>1191947.0</td>
+</tr>
+</tbody>
+</table>
+<p>97 rows × 1 columns</p>
+</div>
+</div>
 
 La seconde approche s’avère plus pratique, car elle renvoie directement un DataFrame Pandas, et non une série indexée.
 À partir de ce DataFrame, quelques manipulations simples suffisent pour obtenir un tableau exploitable décrivant la démographie départementale.
@@ -179,7 +709,6 @@ Ce exercice utilise le jeu de données `emissions` pour calculer les émissions 
 
 Nous allons ici nous focaliser sur le cas le plus favorable qui est la situation où une information permet d’apparier de manière exacte deux bases de données. Associer des données issues de sources différentes est une tâche courante en data science. Par exemple, pour une entreprise, elle peut posseder une base de données clients et une base de données de transactions, et souhaiter les combiner pour analyser le comportement d'achat de ses clients. 
 
-
 Cette structuration en étoile, est historiquement liée aux bases de données relationnelles, aujourd'hui il existe des alternatives plus flexibles sans structure *a priori* où l'information est empilée dans un datalake. Cependant, la structuration en étoile reste très utilisée dans la pratique, notamment de compartimentation de l'information. On ne donne accès qu'aux données nécessaires à une tâche précise, ce qui permet de limiter les risques de fuites de données sensibles.
 
 On parle souvent de jointure de données, un héritage du terme JOIN en SQL. En `Pandas`, et la manière de définir les jointures (left join, right join…) est directement inspirée de SQL. Cette opération est réalisée à l’aide de la méthode `merge()`.
@@ -204,13 +733,451 @@ Il existe quatre types de jointures principales :
 
   * **Right join** : conserve toutes les lignes du DataFrame de droite, et ajoute les colonnes du DataFrame de gauche lorsque des correspondances sont trouvées. Les lignes sans correspondance dans le DataFrame de gauche auront des valeurs NaN pour les colonnes ajoutées.
 
-  * **Outer join** : conserve toutes les lignes des deux DataFrames, en ajoutant des valeurs NaN pour les colonnes où il n'y a pas de correspondance.
+  * **Full (Outer) join** : conserve toutes les lignes des deux DataFrames, en ajoutant des valeurs NaN pour les colonnes où il n'y a pas de correspondance.
+
+Pour illustrer ces différents types de jointures, nous allons utiliser les dataframes d'exemple suivant : 
+
+```python
+left = pd.DataFrame({
+    'id': ['a', 'b', 'c'],
+    'x': ['x1', 'x2', 'x3'],
+    'y': ['y1', 'y2', 'y3'],
+    'z': ['z1', 'z2', 'z3']
+}).set_index('id')
+left
+```
+
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>x</th>
+<th>y</th>
+<th>z</th>
+</tr>
+<tr>
+<th>id</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>a</th>
+<td>x1</td>
+<td>y1</td>
+<td>z1</td>
+</tr>
+<tr>
+<th>b</th>
+<td>x2</td>
+<td>y2</td>
+<td>z2</td>
+</tr>
+<tr>
+<th>c</th>
+<td>x3</td>
+<td>y3</td>
+<td>z3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<br>
+
+```python
+right = pd.DataFrame({
+    'id': ['a', 'd', 'c'],
+    'm': ['m1', 'm2', 'm3'],
+    'n': ['n1', 'n2', 'n3']
+}).set_index('id')
+right
+```
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>m</th>
+<th>n</th>
+</tr>
+<tr>
+<th>id</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>a</th>
+<td>m1</td>
+<td>n1</td>
+</tr>
+<tr>
+<th>d</th>
+<td>m2</td>
+<td>n2</td>
+</tr>
+<tr>
+<th>c</th>
+<td>m3</td>
+<td>n3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
 
 ### 4.1.1 Inner join
 
-## 4.2 Exercice d'application
-Cet exercice va revenir un peu en arrière afin de saisir pourquoi nous prenons le code INSEE de commune au lieu du nom de la commune pour faire les jointures.
+Commenceons par une jointure interne (inner join). Il s’agit du jeu de données où les clés sont retrouvées à l’intersection des deux tables.
 
+```python
+inner_merged = left.merge(
+  right,
+  left_on = ["id"],
+  right_on = ["id"],
+  how = "inner"
+)
+inner_merged
+```
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>x</th>
+<th>y</th>
+<th>z</th>
+<th>m</th>
+<th>n</th>
+</tr>
+<tr>
+<th>id</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>a</th>
+<td>x1</td>
+<td>y1</td>
+<td>z1</td>
+<td>m1</td>
+<td>n1</td>
+</tr>
+<tr>
+<th>c</th>
+<td>x3</td>
+<td>y3</td>
+<td>z3</td>
+<td>m3</td>
+<td>n3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+
+### 4.1.2 Left join
+
+Passons maintenant à une jointure à gauche (left join). On conserve toutes les lignes du DataFrame de gauche (`emissions`), et on ajoute les colonnes du DataFrame de droite (`filosofi`) lorsque des correspondances sont trouvées.
+
+```python
+left_merged = left.merge(
+  right,
+  left_on = ["id"],
+  right_on = ["id"],
+  how = "left"
+)
+left_merged
+```
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>x</th>
+<th>y</th>
+<th>z</th>
+<th>m</th>
+<th>n</th>
+</tr>
+<tr>
+<th>id</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>a</th>
+<td>x1</td>
+<td>y1</td>
+<td>z1</td>
+<td>m1</td>
+<td>n1</td>
+</tr>
+<tr>
+<th>b</th>
+<td>x2</td>
+<td>y2</td>
+<td>z2</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>c</th>
+<td>x3</td>
+<td>y3</td>
+<td>z3</td>
+<td>m3</td>
+<td>n3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<br>
+
+### 4.1.3 Right join
+
+```python
+right_merged = left.merge(
+  right,
+  left_on = ["id"],
+  right_on = ["id"],
+  how = "right"
+)
+right_merged
+```
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>x</th>
+<th>y</th>
+<th>z</th>
+<th>m</th>
+<th>n</th>
+</tr>
+<tr>
+<th>id</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>a</th>
+<td>x1</td>
+<td>y1</td>
+<td>z1</td>
+<td>m1</td>
+<td>n1</td>
+</tr>
+<tr>
+<th>d</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>m2</td>
+<td>n2</td>
+</tr>
+<tr>
+<th>c</th>
+<td>x3</td>
+<td>y3</td>
+<td>z3</td>
+<td>m3</td>
+<td>n3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<br>
+
+### 4.1.4 Full join
+
+```python
+full_merged = left.merge(
+  right,
+  left_on = ["id"],
+  right_on = ["id"],
+  how = "outer"
+)
+full_merged
+```
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>x</th>
+<th>y</th>
+<th>z</th>
+<th>m</th>
+<th>n</th>
+</tr>
+<tr>
+<th>id</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>a</th>
+<td>x1</td>
+<td>y1</td>
+<td>z1</td>
+<td>m1</td>
+<td>n1</td>
+</tr>
+<tr>
+<th>b</th>
+<td>x2</td>
+<td>y2</td>
+<td>z2</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>c</th>
+<td>x3</td>
+<td>y3</td>
+<td>z3</td>
+<td>m3</td>
+<td>n3</td>
+</tr>
+<tr>
+<th>d</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>m2</td>
+<td>n2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+
+## 4.2 Exercice d'application
+
+Cet exercice va revenir un peu en arrière afin de saisir pourquoi nous préferons prendre le code INSEE de commune au lieu du nom de la commune pour faire des jointures.
 
 <details open style="border: 2px solid #4CAF50; border-radius: 8px; margin: 16px 0;">
   <summary style="background: #E8F5E9; padding: 8px 12px; font-weight: bold; color: #0D47A1; cursor: pointer;">
@@ -238,7 +1205,7 @@ Nous allons maintenant calculer l'empreinte carbone par habitant.
     1. Créer une variable <code>emissions</code> qui correspond aux émissions totales d’une commune.<br>
     2. Faire une jointure à gauche entre les données d’émissions et les données de cadrage.<br>
     3. Calculer l’empreinte carbone (émissions totales / population). <br>
-    4. Faire un histogramme de l’empreinte carbone du log de l'empreinte carbone.<br>
+    4. Faire un histogramme de l’empreinte carbone et un autre du log de l'empreinte carbone.<br>
     5. Regarder la corrélation entre les variables et l’empreinte carbone. Certaines variables semblent-elles pouvoir potentiellement influer sur l’empreinte carbone ?
   </div>
 </details>

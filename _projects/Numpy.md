@@ -5,7 +5,7 @@ description:
 img: assets/img/12.jpg
 importance: 4
 category: ADD
-toc : true
+toc : False
 related_publications: False
 ---
 
