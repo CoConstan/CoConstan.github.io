@@ -65,8 +65,8 @@ ninja.data = [{
           description: "Resources for the 4th Year&#39;s Deep Learning Project at Polytech Lyon",
           section: "Projects",handler: () => {
               window.location.href = "/projects/DL_4A/";
-            },},{id: "projects-analyse-de-donnée",
-          title: 'Analyse de donnée',
+            },},{id: "projects-analyse-de-données",
+          title: 'Analyse de données',
           description: "Python et data science",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Intro_ADD/";
