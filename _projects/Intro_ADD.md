@@ -1,6 +1,6 @@
 ---
 layout: page_intro
-title: Analyse de donnée
+title: Analyse de données
 description: Python et data science
 img: assets/img/12.jpg
 importance: 1

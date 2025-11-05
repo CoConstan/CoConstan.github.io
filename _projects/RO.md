@@ -41,6 +41,6 @@ related_publications: False
 
 <h2 id="mcetoc_1icgqd2gd5b">TP :</h2>
 <ul>
-<li><a href="/assets/pdf/RO/TP1.pdf">TP1 sujet</a>, <a href="/assets/pdf/RO/TP1 RO.c">TP1 Correction</a></li>
+<li><a href="/assets/pdf/RO/TP1.pdf">TP1 sujet</a>, <a href="/assets/files/RO/TP1 RO.c">Correction en C</a>, <a href="/assets/files/RO/TP_1_RO_Python.zip">Correction en Python</a> </li>
 <li><a href="/assets/pdf/RO/TP Branch and bound.pdf" target="_blank" rel="noopener noreferrer">TP2 sujet</a>, TP2 Correction</li>
 </ul>
