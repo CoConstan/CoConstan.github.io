@@ -14,7 +14,7 @@ related_publications: False
   * Une note de projets (40% rapport + 40% oral)
   * Une note de QCM (20%)
 * Des QCM non annoncés à l’avance seront organisés en début de cours, pour une durée maximale de 10 à 15 minutes.
-* Le projets sera à rendre à la fin du semestre, par groupe de 2-3 personnes. Un rapport écrit (format Jupyter Notebook encouragé) ainsi qu’une présentation orale (10min + 5min de questions) seront demandés.
+* Le projets sera à rendre à la fin du semestre, par **groupe de 2 ou 3 personnes**. Un **rapport écrit** (format Jupyter Notebook encouragé) ainsi qu’une présentation **orale** (10min + 5min de questions) seront demandés.
 * Le sujet est libre, il doit comporter :
   * Une valorisation d’un ou plusieurs jeux de données *open data* ou collectés par le biais de scraping ou d’API.
   * De la visualisation 
@@ -25,7 +25,7 @@ related_publications: False
 * Un code source partagé (GitHub, GitLab, etc) sera valorisé.
 
 
-Deadline pour le projets: 
+Deadline pour le projet: 
 
 | Étape | Date | 
 |---------|----|
@@ -42,7 +42,7 @@ Des QCM non annoncés à l’avance seront organisés en début de cours, pour u
 
 # 3. Attendus pour le projet
 
-Le projet consiste à l'analyse d'une **problématique de votre choix**, en utilisant un ou plusieurs jeux de données *open data* ou collectés par le biais de scraping ou d’API. 
+Le projet, par groupe de 2 ou 3 étudiants, consiste à l'analyse d'une **problématique de votre choix**, en utilisant un ou plusieurs jeux de données *open data* ou collectés par le biais de scraping ou d’API. 
 
 La première étapes est de bien **définir la question** que vous souhaitez aborder. Pour cela il est nécéssaire de contextualiser et de problematiser le sujet. Il est encouragé de choisir un sujet qui vous intéresse personnellement, cela rendra le travail plus agréable et motivant.
 
