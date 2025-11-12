@@ -182,14 +182,16 @@ array([[0.17455977,0.40903843, 0.97271591],<br>
     📝 Exercice 1
   </summary>
   <div style="padding: 12px;">
-    Créer une fonction « gazparfait » permattant de modéliser PV = nRT avec les unités suivantes (généralement utilisées):
-    - P = pression du gaz en Pa
-    - V = volume en m3
-    - n = quantité de matière en mol
-    - T = température absolue en K (Kelvins)
-    - R = 8.314 SI (si les unités utilisées sont celles ci-dessus)
+    Créer une fonction « gazparfait » permattant de modéliser PV = nRT avec les unités suivantes (généralement utilisées):<br>
+    - P = pression du gaz en Pa<br>
+    - V = volume en m3<br>
+    - n = quantité de matière en mol<br>
+    - T = température absolue en K (Kelvins)<br>
+    - R = 8.314 SI (si les unités utilisées sont celles ci-dessus)<br><br>
 
-    Calculer l'array des valeurs de quantité de matière (n) Y associées aux valeurs de pression X = 15, 89, 56, 78, 152, 66, 48, 77, 2, 96.
+    Calculer l'array des valeurs de quantité de matière (n) Y associées aux volumes X = [15, 89, 56, 78, 152, 66, 48, 77, 2, 96]. On se placera dans les conditions suivantes :<br>
+    - P = 101 325 Pa ( = 1 atm) <br>
+    - T = 20°C <br>
   </div>
 </details>
 
@@ -411,9 +413,9 @@ print(a + 3)
     2. Importer <code>matplotlib.pyplot</code> sous le nom <code>plt</code>. Utiliser <code>plt.scatter</code> pour représenter les données sous forme de nuage de points.<br>
     3.Constuire une matrice 10x10 stockant, à l’élément $(i,j)$ la distance euclidiennee entre les points $X[i,]$ et $X[j,]$. Pour cela, on utilisera la fonction <code>np.newaxis</code> :<br>
     &nbsp;&nbsp;&nbsp;&nbsp;    - Utiliser <code>X1 = X[:, np.newaxis, :]</code> pour transformer la matrice en tableau emboîté. Vérifier les dimensions.<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;    - Créer <code>X2</code> de dimension <code>(1, 10, 2)</code> de la même façon.
+    &nbsp;&nbsp;&nbsp;&nbsp;    - Créer <code>X2</code> de dimension <code>(1, 10, 2)</code> de la même façon.<br>
     &nbsp;&nbsp;&nbsp;&nbsp;    - En déduire, pour chaque point, la distance avec les autres points pour chaque coordonnées. Elever celle-ci au carré.<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;    - Vous devriez avoir un tableau de dimension <code>(1, 10, 2)</code>. La réduction à une matrice 10x10 s’obtient en sommant sur le dernier axe.<br>
+    &nbsp;&nbsp;&nbsp;    - Vous devriez avoir un tableau de dimension <code>(1, 10, 2)</code>. La réduction à une matrice 10x10 s’obtient en sommant sur le dernier axe.<br>
     &nbsp;&nbsp;&nbsp;&nbsp;    - Appliquer la racine carrée pour obtenir une distance euclidienne. <br>
     &nbsp;&nbsp;&nbsp;&nbsp;    - Vérifier que les termes diagonaux sont bien nuls.<br>
     4. Il faut maintenant classer pour chaque point les points dont les valeurs sont les plus similaires. Utiliser <code>np.argsort</code> pour obtenir, pour chaque ligne, le classement des points les plus proches.<br>
