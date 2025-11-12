@@ -90,6 +90,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Modelisation_ADD/";
+            },},{id: "projects-évaluation",
+          title: 'Évaluation',
+          description: "Attendus et critères de notation",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Notation/";
             },},{id: "projects-numpy",
           title: 'Numpy',
           description: "",
