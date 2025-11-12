@@ -48,9 +48,9 @@ La première étapes est de bien **définir la question** que vous souhaitez abo
 
 Le projet doit articuler les trois étapes suivantes :
 
-* 1. Collecte et exploration des données
-* 2. Visualisation et comunication des résultats
-* 3. Analyse et/ou Modélisation
+1. Collecte et exploration des données
+2. Visualisation et comunication des résultats
+3. Analyse et/ou Modélisation
 
 Il n'est pas nécessaire de couvrir ces trois étapes de manière exhaustive, mais il est important de montrer une compréhension claire de chacune d'entre elles. Il est attendu qu'au moins une de ces étapes soit approfondie.
 
