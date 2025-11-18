@@ -25,11 +25,11 @@ C’est un outil clé pour la data science et l’intelligence artificielle. Vou
     💡Remarque
   </summary>
   <div style="padding: 12px;">
-   Pytorch (l'une des librairies de références pour le deep learning) possède une syntaxe quasiment identique à Numpy. La parrelisation d'un code NumPy est donc presque "automatiques".
+   Pytorch (l'une des librairies de références pour le deep learning) possède une syntaxe quasiment identique à Numpy. La parallèlisation d'un code NumPy est donc presque "automatique".
   </div>
 </details>
 
-Dans ce chapitre, nous utiliseront la convention qui s'est imposé pour l'importation de `NumPy`, à savoir : 
+Dans ce chapitre, nous utiliserons la convention qui s'est imposée pour l'importation de `NumPy`, à savoir : 
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
@@ -43,7 +43,7 @@ import numpy as np
 
 Dans le domaine de la science des données — comme nous le verrons plus en détail dans les prochains chapitres — l’élément central est le tableau de données à deux dimensions. La première dimension correspond aux lignes et la seconde aux colonnes. Lorsqu’on ne s’intéresse qu’à une seule dimension, on considère alors une variable, c’est-à-dire une colonne du tableau. Il est donc naturel d’établir un lien entre ces tableaux de données et les objets mathématiques que sont les matrices et les vecteurs.
 
-`Numpy` constitue la brique de base pour manipuler efficacement des données numériques, organisées sous forme de tableaux ou de matrices. Il fournit des structures de données adaptées ainsi qu’un large ensemble d’opérations mathématiques et algébriques, absentes du langage Python standard.
+`NumPy` constitue la brique de base pour manipuler efficacement des données numériques, organisées sous forme de tableaux ou de matrices. Il fournit des structures de données adaptées ainsi qu’un large ensemble d’opérations mathématiques et algébriques, absentes du langage Python standard.
 
 L’objet central de `NumPy` est l’`array`, un tableau de données multidimensionnel. Il peut être unidimensionnel et s’apparenter à un vecteur, bidimensionnel et se rapprocher d’une matrice, ou plus généralement prendre la forme d’un objet à n dimensions, appelé `ndarray`, que l’on peut voir comme un ensemble de tableaux emboîtés.
 
@@ -216,8 +216,8 @@ array([[0.99447383,-1.06050264, -0.42279998],<br>
     📝 Exercice 2
   </summary>
   <div style="padding: 12px;">
-    - Générer $X$ une variable aléatoire, correspondant à 1000 réalisations d’une loi $U(0,1)$ <br>
-    - Générer $Y$ une variable aléatoire, correspondant à 1000 réalisations d’une loi $N(0,2)$ <br>
+    - Générer $X$ un échantillon, correspondant à 1000 réalisations d’une loi $U(0,1)$ <br>
+    - Générer $Y$ un échantillon, correspondant à 1000 réalisations d’une loi $N(0,2)$ <br>
     - Verifié les moyennes et variances à l'aide de `np.var` et `np.mean`<br>    
     - Créer une fonction `statdesc` permettant de calculer la moyenne, médiane, écart-type, minimum et maximum.
   </div>
@@ -253,7 +253,7 @@ a[2]
 np.int64(2)
 </code>
 
-Cette idée est generalisable en dimension supérieur. 
+Cette idée est généralisable en dimension supérieur. 
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
@@ -269,9 +269,9 @@ np.int64(6)
 </code>
 
 
-Le slicing en NumPy permet d'extraire des parties d'un tableau (`ndarray`) en utilisant la notation `array[start:stop:step]`. Cela permet notamment de réaliser des coupes 2D (slices) dans une image 3D stocker dans un array. Ou une colone/ligne dans un tableau 2D.
+Le slicing en `NumPy` permet d'extraire des parties d'un tableau (`ndarray`) en utilisant la notation `array[start:stop:step]`. Cela permet notamment de réaliser des coupes 2D (slices) dans une image 3D stockée dans un array. Ou une colone/ligne dans un tableau 2D.
 
-Par exemple si on veut selectionné la 1ère colone du tableau précédent :
+Par exemple si on veut selectionner la 1ère colone du tableau précédent :
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
@@ -411,7 +411,7 @@ print(a + 3)
   <div style="padding: 12px;">
     1. Créer <code>X</code> un tableau à deux dimensions (i.e. une matrice) comportant 10 lignes et 2 colonnes. Les nombres dans le tableau sont aléatoires. <br>
     2. Importer <code>matplotlib.pyplot</code> sous le nom <code>plt</code>. Utiliser <code>plt.scatter</code> pour représenter les données sous forme de nuage de points.<br>
-    3.Constuire une matrice 10x10 stockant, à l’élément $(i,j)$ la distance euclidiennee entre les points $X[i,]$ et $X[j,]$. Pour cela, on utilisera la fonction <code>np.newaxis</code> :<br>
+    3.Constuire une matrice 10x10 stockant, à l’élément $(i,j)$, la distance euclidienne entre les points $X[i,]$ et $X[j,]$. Pour cela, on utilisera la fonction <code>np.newaxis</code> :<br>
     &nbsp;&nbsp;&nbsp;&nbsp;    - Utiliser <code>X1 = X[:, np.newaxis, :]</code> pour transformer la matrice en tableau emboîté. Vérifier les dimensions.<br>
     &nbsp;&nbsp;&nbsp;&nbsp;    - Créer <code>X2</code> de dimension <code>(1, 10, 2)</code> de la même façon.<br>
     &nbsp;&nbsp;&nbsp;&nbsp;    - En déduire, pour chaque point, la distance avec les autres points pour chaque coordonnées. Elever celle-ci au carré.<br>

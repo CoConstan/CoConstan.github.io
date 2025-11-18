@@ -8,7 +8,7 @@ category: ADD
 related_publications: False
 ---
 
-Cette partie *optionnelle* est là pour vous aider à apprendre ou à réviser les bases du langage `Python`. Une bonne compréhension de sa structuration et de sa philosophie vous permettra d’assimiler plus facilement la logique des library de data science telles que `Numpy`, `Pandas` et `Scikit Learn`.
+Cette partie *optionnelle* est là pour vous aider à apprendre ou à réviser les bases du langage `Python`. Une bonne compréhension de sa structuration et de sa philosophie vous permettra d’assimiler plus facilement la logique des librairies de data science telles que `Numpy`, `Pandas` et `Scikit Learn`.
 
 Pour cela, vous trouverez ci-dessous une série de notebooks. Vous pouvez les parcourir tous ou aucun, dans l’ordre ou dans le désordre.
 
@@ -49,7 +49,7 @@ La suite du cours se trouve ici : **[Manipulation]({{ site.baseurl }}/projects/M
   <a href="https://drive.google.com/file/d/1OtELVkuw6DfXa-eXJj_dMLnXogW4CoOM/view?usp=sharing" style="text-decoration: none;">
     <div style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; text-align: center; transition: transform 0.2s;">
       <h3>Fonctions</h3>
-      <p>Introduction à l'utilisation de fonction pour rendre son code plus lisible.</p>
+      <p>Introduction à l'utilisation de fonctions pour rendre son code plus lisible.</p>
     </div>
   </a>
 

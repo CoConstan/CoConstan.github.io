@@ -28,4 +28,4 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi, i'm a PHD student suppervised by [David SARRUT](https://calm-sundae-1df120.netlify.app/) and [Ane ETXEBESTE](https://www.creatis.insa-lyon.fr/~etxebeste/) working on Deep learning methods for improved quantification of SPECT imaging in Lu-177 therapy at [CREATIS](http://www.creatis.insa-lyon.fr/), in the ‘[Tomoradio](https://www.creatis.insa-lyon.fr/site7/en/tomoradio)’ team (Tomographic imaging and radiation therapy).
+Hi, i'm a PHD student supervised by [David SARRUT](https://calm-sundae-1df120.netlify.app/) and [Ane ETXEBESTE](https://www.creatis.insa-lyon.fr/~etxebeste/) working on Deep learning methods for improved quantification of SPECT imaging in Lu-177 therapy at [CREATIS](http://www.creatis.insa-lyon.fr/), in the ‘[Tomoradio](https://www.creatis.insa-lyon.fr/site7/en/tomoradio)’ team (Tomographic imaging and radiation therapy).
