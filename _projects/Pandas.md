@@ -853,3 +853,57 @@ Autres stratégies:
 
 # 10 **Exercices d'application**
 
+<details open style="border: 2px solid #4CAF50; border-radius: 8px; margin: 16px 0;">
+  <summary style="background: #E8F5E9; padding: 8px 12px; font-weight: bold; color: #0D47A1; cursor: pointer;">
+    📝 Exercice 1
+  </summary>
+  <div style="padding: 12px;">
+    Pour cet exercice, vous aurez besoin de télécharger le fichier suivant : <a href="/assets/dataset/Produits.xlsx" target="_blank" rel="noopener noreferrer"> Produits.xlsx </a> <br>
+    <br>
+    1. Importer le fichier dans un dataframe en utilisant la fonction <code>read_excel</code>.<br>
+    2. Afficher les 5 premières lignes du dataframe.<br>
+    3. Afficher un échantillon aléatoire de 10 lignes du dataframe.<br>
+    4. Afficher les informations générales du dataframe. (methode <code>.info()</code>) <br>
+    5. Extraire le Nom, Catégorie, Origine et Prix des produits, pour :<br>
+        - Catégorie = boissons <br>
+        - Catégorie = boissons et prix >100<br>
+        - Catégorie = boissons et origine=CEE et prix > 100<br>
+        - Catégorie = boissons ou catégorie = condiments<br>
+        - Catégorie = boissons et origine = CEE OU catégorie = condiment<br>
+        - Catégorie = viande ET origine = CEE OU catégorie = condiment ET origine = extérieur<br>
+        - prix > 70 et prix <=100<br>
+        - Lister les aliments dont le prix est compris entre 100 et 200, et qui sont des «viandes»<br>
+        - Lister les 15 produits les moins chers<br>
+    6. Calculer la moyenne de prix des boissons distribuées à Lyon (<code>pivot_table</code>)<br>
+    7. Quels sont les 5 produits les moins chers vendus à Lyon?<br>
+    
+  </div>
+</details>
+
+<details open style="border: 2px solid #4CAF50; border-radius: 8px; margin: 16px 0;">
+  <summary style="background: #E8F5E9; padding: 8px 12px; font-weight: bold; color: #0D47A1; cursor: pointer;">
+    📝 Exercice 1
+  </summary>
+  <div style="padding: 12px;">
+    Pour cet exercice, vous aurez besoin de télécharger le fichier suivant : <a href="/assets/dataset/us_crime_rates.csv" target="_blank" rel="noopener noreferrer"> us_crime_rates.csv </a><br>
+    <br>
+    1. Importer le fichier dans un dataframe en utilisant la fonction <code>read_csv</code>.<br>
+    2. Afficher les 5 premières lignes du dataframe.<br>
+    3. Créer le dataframe qui donne chaque indicateur pour chaque décennie. (<code>.resample()</code>)<br>
+    4. Quel était la décennie la plus dangereuse ?<br>
+    5. Afficher l'évolution du nombre de meurtre par décennie. <br>
+  </div>
+</details>
+
+
+
+<details style="border-radius: 8px; margin: 16px 0;">
+  <summary style="padding: 8px 12px; font-weight: bold; color: #0D47A1; cursor: pointer;">
+    Résultat attendu pour la question 3.
+  </summary>
+  <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
+      <figure style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/img/OutputQ3pandas.png" alt="tidy" width="100%">
+</figure>
+  </div>
+</details>
