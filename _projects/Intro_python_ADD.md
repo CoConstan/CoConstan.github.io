@@ -1,14 +1,14 @@
 ---
 layout: page
 title: Intro Python
-description: 
+description:
 img: assets/img/12.jpg
 importance: 2
 category: ADD
 related_publications: False
 ---
 
-Cette partie *optionnelle* est là pour vous aider à apprendre ou à réviser les bases du langage `Python`. Une bonne compréhension de sa structuration et de sa philosophie vous permettra d’assimiler plus facilement la logique des librairies de data science telles que `Numpy`, `Pandas` et `Scikit Learn`.
+Cette partie _optionnelle_ est là pour vous aider à apprendre ou à réviser les bases du langage `Python`. Une bonne compréhension de sa structuration et de sa philosophie vous permettra d’assimiler plus facilement la logique des librairies de data science telles que `Numpy`, `Pandas` et `Scikit Learn`.
 
 Pour cela, vous trouverez ci-dessous une série de notebooks. Vous pouvez les parcourir tous ou aucun, dans l’ordre ou dans le désordre.
 
@@ -64,5 +64,5 @@ La suite du cours se trouve ici : **[Manipulation]({{ site.baseurl }}/projects/M
 
 <br>
 
-Dans le cas où vous ne souhaitez pas utiliser colab, vous pouvez télécharger les notebooks en cliquant sur le lien suivant : 
+Dans le cas où vous ne souhaitez pas utiliser colab, vous pouvez télécharger les notebooks en cliquant sur le lien suivant :
 **[Intro_python.zip]({{ site.baseurl }}/assets/files/Intro_python.zip)**

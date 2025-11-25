@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 {% if page._styles %}
   <!-- Page/Post style -->
   <style type="text/css">
@@ -10,40 +9,40 @@ layout: default
 {% endif %}
 
 <style>
-/* Sidebar indépendante */
-.sidebar {
-  width: 250px;
-  position: fixed;
-  top: 100px;
-  left: 20px;
-  background: var(--global-bg-color);       /* fond */
-  border: 1px solid var(--global-border-color); /* bordure */
-  color: var(--global-text-color);          /* texte */
-  padding: 0px;
-  border-radius: 0px; /* arrondir un peu si tu veux */
-}
+  /* Sidebar indépendante */
+  .sidebar {
+    width: 250px;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    background: var(--global-bg-color); /* fond */
+    border: 1px solid var(--global-border-color); /* bordure */
+    color: var(--global-text-color); /* texte */
+    padding: 0px;
+    border-radius: 0px; /* arrondir un peu si tu veux */
+  }
 
-.sidebar a {
-  color: var(--global-text-color);          /* liens adaptatifs */
-  text-decoration: none;
-}
+  .sidebar a {
+    color: var(--global-text-color); /* liens adaptatifs */
+    text-decoration: none;
+  }
 
-.sidebar a:hover {
-  color: var(--global-theme-color);         /* couleur du thème */
-}
+  .sidebar a:hover {
+    color: var(--global-theme-color); /* couleur du thème */
+  }
 
-.post {
-  max-width: 1500px;   /* augmente selon ton besoin */
-  margin: 0 auto;     /* centre le contenu horizontalement */
-  padding: 20px;      /* optionnel : ajoute un peu d'espace autour */
-}
+  .post {
+    max-width: 1500px; /* augmente selon ton besoin */
+    margin: 0 auto; /* centre le contenu horizontalement */
+    padding: 20px; /* optionnel : ajoute un peu d'espace autour */
+  }
 </style>
 
 <style>
-#toc-container {
+  #toc-container {
     position: fixed;
-    top: 100px;              /* distance depuis le haut */
-    right: 40px;             /* distance depuis la droite */
+    top: 100px; /* distance depuis le haut */
+    right: 40px; /* distance depuis la droite */
     width: 260px;
     max-height: 70vh;
     overflow-y: auto;
@@ -52,33 +51,33 @@ layout: default
     border: 1px solid var(--global-border-color);
     border-radius: 10px;
     padding: 15px 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
   }
-  
+
   #toc-container .toc-title {
     font-weight: 600;
     margin-bottom: 10px;
     text-align: center;
     color: var(--global-theme-color);
   }
-  
+
   #toc-container ul {
     list-style: none;
     padding-left: 10px;
     margin: 0;
   }
-  
+
   #toc-container a {
     text-decoration: none;
     color: var(--global-text-color);
     transition: color 0.2s;
   }
-  
+
   #toc-container a:hover {
     color: var(--global-theme-color);
   }
-  
+
   /* Version mobile : cacher le TOC */
   @media (max-width: 1000px) {
     #toc-container {
@@ -94,8 +93,6 @@ layout: default
   }
 </style>
 
-
-
 <!-- Barre latérale -->
 <nav class="sidebar">
   <h3></h3>
@@ -107,14 +104,13 @@ layout: default
 </nav>
 
 {% if page.toc %}
-<nav id="toc-container">
-  <h3 class="toc-title">Plan de la page</h3>
-  <div id="toc-content">
-    {{ content | toc_only }}
-  </div>
-</nav>
+  <nav id="toc-container">
+    <h3 class="toc-title">Plan de la page</h3>
+    <div id="toc-content">
+      {{ content | toc_only }}
+    </div>
+  </nav>
 {% endif %}
-
 
 <!-- Contenu principal -->
 <div class="post">
@@ -123,9 +119,9 @@ layout: default
     <p class="post-description">{{ page.description }}</p>
   </header>
 
-<article style="text-align: justify; text-justify: inter-word">
-  {{ content }}
-</article>
+  <article style="text-align: justify; text-justify: inter-word">
+    {{ content }}
+  </article>
 
   {% if page.related_publications %}
     <h2>References</h2>

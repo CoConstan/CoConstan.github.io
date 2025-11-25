@@ -4,7 +4,7 @@ title: Deep Learning Project - 4A
 description: Resources for the 4th Year's Deep Learning Project at Polytech Lyon
 img: assets/img/DL.jpg
 importance: 3
-category: Polytech 
+category: Polytech
 related_publications: False
 ---
 

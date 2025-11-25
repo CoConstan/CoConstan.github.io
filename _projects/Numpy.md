@@ -1,22 +1,22 @@
 ---
 layout: page_Manipulation
 title: Numpy
-description: 
+description:
 img: assets/img/12.jpg
 importance: 4
 category: ADD
-toc : False
+toc: False
 related_publications: False
 ---
 
 ## 1 Introduction
 
-`NumPy` est une bibliothèque Python optimisée pour le calcul numérique. Elle offre :  
+`NumPy` est une bibliothèque Python optimisée pour le calcul numérique. Elle offre :
 
-- **Tableaux multidimensionnels (`ndarray`)** plus performants que les listes Python  
-- **Fonctions mathématiques optimisées** pour l’algèbre linéaire, les statistiques et les transformations  
-- **Gestion efficace de grandes quantités de données** grâce à ses opérations vectorisées  
-- **Interopérabilité** avec d'autres bibliothèques comme SciPy et Pandas.  
+- **Tableaux multidimensionnels (`ndarray`)** plus performants que les listes Python
+- **Fonctions mathématiques optimisées** pour l’algèbre linéaire, les statistiques et les transformations
+- **Gestion efficace de grandes quantités de données** grâce à ses opérations vectorisées
+- **Interopérabilité** avec d'autres bibliothèques comme SciPy et Pandas.
 
 C’est un outil clé pour la data science et l’intelligence artificielle. Vous trouverez la documentation complète ici : [Documentation Numpy](https://numpy.org/doc/stable/)
 
@@ -29,7 +29,7 @@ C’est un outil clé pour la data science et l’intelligence artificielle. Vou
   </div>
 </details>
 
-Dans ce chapitre, nous utiliserons la convention qui s'est imposée pour l'importation de `NumPy`, à savoir : 
+Dans ce chapitre, nous utiliserons la convention qui s'est imposée pour l'importation de `NumPy`, à savoir :
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
@@ -49,7 +49,7 @@ L’objet central de `NumPy` est l’`array`, un tableau de données multidimens
 
 ### 2.1 Création d'array
 
-Il existe plusieurs moyens de créer un *array*. La plus simple est à partir d'une liste. Pour se faire on utilise la méthodes <code>np.array</code>
+Il existe plusieurs moyens de créer un _array_. La plus simple est à partir d'une liste. Pour se faire on utilise la méthodes <code>np.array</code>
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
@@ -63,7 +63,7 @@ np.array([1, 2, 3, 4, 5])
 array([1, 2, 3, 4, 5])
 </code>
 
-On peut aussi utiliser des séquences logiques avec <code>np.arange</code> (suite) ou  <code>np.linespace</code> (interpolation linéaire, *equivalant au linspace de matlab*)
+On peut aussi utiliser des séquences logiques avec <code>np.arange</code> (suite) ou <code>np.linespace</code> (interpolation linéaire, _equivalant au linspace de matlab_)
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
@@ -141,7 +141,7 @@ array([[3.14, 3.14],<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.14, 3.14]])
 </code>
 
-Pour créer une matrice identité, on utilise <code>np.eyes</code>: 
+Pour créer une matrice identité, on utilise <code>np.eyes</code>:
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
@@ -161,7 +161,7 @@ array([[1., 0., 0.],<br>
 
 Le module `numpy.random` fournit toute une liste de fonctions pour la génération de matrices aléatoires.
 
-Pour faire un tirage uniforme : 
+Pour faire un tirage uniforme :
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
@@ -192,10 +192,11 @@ array([[0.17455977,0.40903843, 0.97271591],<br>
     Calculer l'array des valeurs de quantité de matière (n) Y associées aux volumes X = [15, 89, 56, 78, 152, 66, 48, 77, 2, 96]. On se placera dans les conditions suivantes :<br>
     - P = 101 325 Pa ( = 1 atm) <br>
     - T = 20°C <br>
+
   </div>
 </details>
 
-Pour faire un tirage suivant une loi normal N(0,1) : 
+Pour faire un tirage suivant une loi normal N(0,1) :
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
@@ -222,7 +223,6 @@ array([[0.99447383,-1.06050264, -0.42279998],<br>
     - Créer une fonction `statdesc` permettant de calculer la moyenne, médiane, écart-type, minimum et maximum.
   </div>
 </details>
-
 
 ## 3 Indexation et slicing
 
@@ -253,7 +253,7 @@ a[2]
 np.int64(2)
 </code>
 
-Cette idée est généralisable en dimension supérieur. 
+Cette idée est généralisable en dimension supérieur.
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
@@ -267,7 +267,6 @@ a[1,2]
 <code>
 np.int64(6)
 </code>
-
 
 Le slicing en `NumPy` permet d'extraire des parties d'un tableau (`ndarray`) en utilisant la notation `array[start:stop:step]`. Cela permet notamment de réaliser des coupes 2D (slices) dans une image 3D stockée dans un array. Ou une colone/ligne dans un tableau 2D.
 
@@ -285,39 +284,44 @@ a[:,1]
 array([2, 5], dtype=int64)
 </code>
 
-Voici quelques exemples en vrac de slicing : 
+Voici quelques exemples en vrac de slicing :
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
 <code>
 # Création d'un tableau NumPy  
-arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])  
+arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-# Slicing de base  
-print(arr[2:6])   # [2 3 4 5]  (de l'index 2 à 5)  
-print(arr[:5])    # [0 1 2 3 4] (du début à l'index 4)  
-print(arr[5:])    # [5 6 7 8 9] (de l'index 5 à la fin)  
-print(arr[::2])   # [0 2 4 6 8] (tous les 2 éléments)  
-print(arr[::-1])  # [9 8 7 6 5 4 3 2 1 0] (tableau inversé)  
+# Slicing de base
 
-# Slicing en 2D  
+print(arr[2:6]) # [2 3 4 5] (de l'index 2 à 5)  
+print(arr[:5]) # [0 1 2 3 4] (du début à l'index 4)  
+print(arr[5:]) # [5 6 7 8 9] (de l'index 5 à la fin)  
+print(arr[::2]) # [0 2 4 6 8] (tous les 2 éléments)  
+print(arr[::-1]) # [9 8 7 6 5 4 3 2 1 0] (tableau inversé)
+
+# Slicing en 2D
+
 mat = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])  
-print(mat[:2, 1:])  # [[2 3]  
-                    #  [5 6]] (extraction d’un sous-tableau)  
+print(mat[:2, 1:]) # [[2 3]  
+                    #  [5 6]] (extraction d’un sous-tableau)
 
 # Slicing avec un tableau de booléens
+
 arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-print(arr[arr > 5])  # [6 7 8 9] (éléments plus grands que 5)
+print(arr[arr > 5]) # [6 7 8 9] (éléments plus grands que 5)
 </code>
+
 </pre>
 </div>
 
 ### 3.1 Filtre logiques
+
 On peut également sélectionner des données à partir de conditions logiques, grâce à ce qu’on appelle un boolean mask. Cette approche est souvent plus pratique et sert principalement à filtrer les données de manière flexible.
 
 Pour des comparaisons simples, l’utilisation des opérateurs logiques est généralement suffisante. Ces comparaisons s’appliquent aussi aux tableaux multidimensionnels, car NumPy exploite le mécanisme du broadcasting, sur lequel nous reviendrons plus en détail par la suite.
 
-Un petit exemple : 
+Un petit exemple :
 
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
@@ -336,11 +340,13 @@ print(x[mask])
 </code>
 
 ### 3.2 Une petite subtilité
+
 Un aspect fondamental de la performance de NumPy par rapport aux listes Python réside dans la gestion du slicing. Lorsqu’un découpage est effectué sur une liste, Python crée systématiquement une copie de la portion sélectionnée. Cette duplication engendre un surcoût en mémoire et en temps d’exécution, particulièrement lorsque les structures de données sont volumineuses.
 
 En revanche, dans le cas d’un array NumPy, le slicing ne produit pas de copie : il génère une vue (view) qui fait simplement référence aux données sous-jacentes. Ainsi, toute modification appliquée à cette vue impacte directement l’array d’origine.
 
 Lorsque la création d’une copie indépendante est nécessaire — par exemple pour préserver l’intégrité du tableau initial — il est possible d’utiliser explicitement la méthode `copy`.
+
 <div style="margin: 20px 0; font-family: 'Courier New', monospace; font-size: 0.9em;">
 <pre>
 <code>
@@ -349,19 +355,18 @@ x_slice_copy = x[:2].copy()
 </pre>
 </div>
 
-
 ## 4 Manipuler un Array
 
 NumPy propose de nombreuse méthodes et fonctions pour modifier un array :
 
-| Opération     | Type | Implementation |
+| Opération | Type | Implementation |
 |---------|----:| |
-| Aplatir un array      |  méthodes | `x.flatten()` |
-| Transposer un array   |  méthodes | `x.T` |
-| Transposer un array   |  fonction | `np.transpose(x)` |
-| Ajouter des éléments à la fin d'un array   |  fonction | `np.append(x, element)` |
-| Ajouter des éléments à une position d'un array   |  fonction | `np.insert(x, position, element)` |
-| Supprimer des éléments     |  fonction | `np.delete(x, position)` |
+| Aplatir un array | méthodes | `x.flatten()` |
+| Transposer un array | méthodes | `x.T` |
+| Transposer un array | fonction | `np.transpose(x)` |
+| Ajouter des éléments à la fin d'un array | fonction | `np.append(x, element)` |
+| Ajouter des éléments à une position d'un array | fonction | `np.insert(x, position, element)` |
+| Supprimer des éléments | fonction | `np.delete(x, position)` |
 | Trier un array | fonction | `np.sort(x)` |
 | Concatenation | fonction | `np.concatenate((x1,x2), axis)` |
 
@@ -383,6 +388,7 @@ NumPy propose de nombreuse méthodes et fonctions pour modifier un array :
 </details>
 
 ## 5 Braodcasting
+
 Le broadcasting désigne l’ensemble des règles qui permettent d’effectuer des opérations entre des tableaux de dimensions différentes. Concrètement, il s’agit d’étendre automatiquement les dimensions d’un tableau afin de rendre l’opération compatible, sans avoir à dupliquer explicitement les données.
 
 Par exemple, le broadcasting permet d’appliquer une opération impliquant un scalaire à l’ensemble des éléments d’un tableau NumPy. Ainsi, le scalaire 3 peut être traité comme un tableau de dimension trois pour être ajouté élément par élément à un array de taille 3.
@@ -396,6 +402,7 @@ b = np.array([3, 3, 3])
 print(a + b)
 print(a + 3)
 </code>
+
 </pre>
 </div>
 
@@ -442,6 +449,7 @@ print(a + 3)
             # plot a line from X[i] to X[j]
             # use some zip magic to make it happen:
             plt.plot(*zip(X[j], X[i]), color='black')
+
   </code>
   </pre>
   </div>

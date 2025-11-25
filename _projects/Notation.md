@@ -8,41 +8,39 @@ category: ADD
 related_publications: False
 ---
 
-# 1. Résumé 
+# 1. Résumé
 
-* La note finale sera composer de 2 notes différentes : 
-  * Une note de projets (40% rapport + 40% oral)
-  * Une note de QCM (20%)
-* Des QCM non annoncés à l’avance seront organisés en début de cours, pour une durée maximale de 10 à 15 minutes.
-* Le projets sera à rendre à la fin du semestre, par **groupe de 2 ou 3 personnes**. Un **rapport écrit** (format Jupyter Notebook encouragé) ainsi qu’une présentation **orale** (10min + 5min de questions) seront demandés.
-* Le sujet est libre, il doit comporter :
-  * Une valorisation d’un ou plusieurs jeux de données *open data* ou collectés par le biais de scraping ou d’API.
-  * De la visualisation 
-  * De la modélisation
-* Les étudiants sont invités à proposer des sujets qui leur plaisent, à faire valider par le chargé de TD. 
-* **Les projets issus de compétitions type Kaggle sont interdits.**
-* Le projet doit être **reproductible** et **documenté**. Le rapport doit contenir des explications claires sur les choix méthodologiques et techniques effectués.
-* Un code source partagé (GitHub, GitLab, etc) sera valorisé.
+- La note finale sera composer de 2 notes différentes :
+  - Une note de projets (40% rapport + 40% oral)
+  - Une note de QCM (20%)
+- Des QCM non annoncés à l’avance seront organisés en début de cours, pour une durée maximale de 10 à 15 minutes.
+- Le projets sera à rendre à la fin du semestre, par **groupe de 2 ou 3 personnes**. Un **rapport écrit** (format Jupyter Notebook encouragé) ainsi qu’une présentation **orale** (10min + 5min de questions) seront demandés.
+- Le sujet est libre, il doit comporter :
+  - Une valorisation d’un ou plusieurs jeux de données _open data_ ou collectés par le biais de scraping ou d’API.
+  - De la visualisation
+  - De la modélisation
+- Les étudiants sont invités à proposer des sujets qui leur plaisent, à faire valider par le chargé de TD.
+- **Les projets issus de compétitions type Kaggle sont interdits.**
+- Le projet doit être **reproductible** et **documenté**. Le rapport doit contenir des explications claires sur les choix méthodologiques et techniques effectués.
+- Un code source partagé (GitHub, GitLab, etc) sera valorisé.
 
+Deadline pour le projet:
 
-Deadline pour le projet: 
-
-| Étape | Date | 
-|---------|----|
-| Validation des sujets |  10 décembre 2025 | 
-| Rendu du projets   |  XX | 
-| Soutenance   |  XX | 
+| Étape                 | Date             |
+| --------------------- | ---------------- |
+| Validation des sujets | 10 décembre 2025 |
+| Rendu du projets      | XX               |
+| Soutenance            | XX               |
 
 <br>
 
-# 2. QCM 
+# 2. QCM
 
-Des QCM non annoncés à l’avance seront organisés en début de cours, pour une durée maximale de 10 à 15 minutes. Ils porteront sur des notions de bases abordée dans les TPs. Toutes questions a sa reponse sur ce site. Le but est de s'assurer que les étudiants ont bien assimilé les notions de base. 
-
+Des QCM non annoncés à l’avance seront organisés en début de cours, pour une durée maximale de 10 à 15 minutes. Ils porteront sur des notions de bases abordée dans les TPs. Toutes questions a sa reponse sur ce site. Le but est de s'assurer que les étudiants ont bien assimilé les notions de base.
 
 # 3. Attendus pour le projet
 
-Le projet, par groupe de 2 ou 3 étudiants, consiste à l'analyse d'une **problématique de votre choix**, en utilisant un ou plusieurs jeux de données *open data* ou collectés par le biais de scraping ou d’API. 
+Le projet, par groupe de 2 ou 3 étudiants, consiste à l'analyse d'une **problématique de votre choix**, en utilisant un ou plusieurs jeux de données _open data_ ou collectés par le biais de scraping ou d’API.
 
 La première étapes est de bien **définir la question** que vous souhaitez aborder. Pour cela il est nécéssaire de contextualiser et de problematiser le sujet. Il est encouragé de choisir un sujet qui vous intéresse personnellement, cela rendra le travail plus agréable et motivant.
 
@@ -88,8 +86,6 @@ Enfin, pensez à bien documenter et justifier vos choix. Un code clair et bien c
   </div>
 </details>
 
-
-
 ## 3.2 Visualisation et Analyses descriptives
 
 Les statistiques descriptives constituent une étape essentielle du projet. Elles doivent permettre de comprendre la structure de la base de données et d’en dégager les premières tendances majeures. L’objectif est d’obtenir une vision d’ensemble : comment les données se relient à la problématique posée, en quoi elles permettent d’y répondre, et quels premiers enseignements elles apportent. Chaque analyse doit être interprétée, il ne suffit pas d’afficher des tableaux ou un simple describe sans en tirer de conclusions.
@@ -111,16 +107,16 @@ Même si le projet n’est pas celui d’un cours de statistiques, la rigueur sc
 
 Pour le rendu, vous devrez :
 
-* Rédiger un rapport écrit (format Jupyter Notebook encouragé) présentant votre démarche, vos analyses et vos résultats. Le rapport doit être clair, structuré et bien documenté, avec des explications sur les choix méthodologiques et techniques effectués.
-* Transmettre le code source de votre projet. L’utilisation de plateformes comme GitHub est recommandée et sera valorisé.
-* Préparer une présentation orale de 10 minutes, suivie de 5 minutes de questions. La présentation doit synthétiser les points clés de votre projet et mettre en avant les résultats les plus significatifs.
+- Rédiger un rapport écrit (format Jupyter Notebook encouragé) présentant votre démarche, vos analyses et vos résultats. Le rapport doit être clair, structuré et bien documenté, avec des explications sur les choix méthodologiques et techniques effectués.
+- Transmettre le code source de votre projet. L’utilisation de plateformes comme GitHub est recommandée et sera valorisé.
+- Préparer une présentation orale de 10 minutes, suivie de 5 minutes de questions. La présentation doit synthétiser les points clés de votre projet et mettre en avant les résultats les plus significatifs.
 
 # 5. Exemples de projet
 
 Quelques exemples de projets possibles (non exhaustifs) :
 
-* Peut-on prédire l'apparition de feu de forêt à partir de données météorologiques et géographiques ?
-* Études de l’évolution de la qualité de l’air dans les grandes villes françaises sur les dix dernières années.
-* Présidentielle 2022 : Analyse des tendances de vote à partir des données socio-économiques et historiques.
-* Étude qualitative des commentaires YouTube visant à mesurer la perception et la réception de la vidéo par les spectateurs.
-* L’insertion professionnelle chez les jeunes, analyse des facteurs influençant le taux d’emploi à 6 mois après l’obtention du diplôme.
+- Peut-on prédire l'apparition de feu de forêt à partir de données météorologiques et géographiques ?
+- Études de l’évolution de la qualité de l’air dans les grandes villes françaises sur les dix dernières années.
+- Présidentielle 2022 : Analyse des tendances de vote à partir des données socio-économiques et historiques.
+- Étude qualitative des commentaires YouTube visant à mesurer la perception et la réception de la vidéo par les spectateurs.
+- L’insertion professionnelle chez les jeunes, analyse des facteurs influençant le taux d’emploi à 6 mois après l’obtention du diplôme.

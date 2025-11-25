@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 {% if page._styles %}
   <!-- Page/Post style -->
   <style type="text/css">
@@ -10,29 +9,30 @@ layout: default
 {% endif %}
 
 <style>
-/* Sidebar indépendante */
-.sidebar {
-  width: 220px;
-  position: fixed;
-  top: 100px;
-  left: 20px;
-  background: var(--global-bg-color);       /* fond */
-  border: 1px solid var(--global-border-color); /* bordure */
-  color: var(--global-text-color);          /* texte */
-  padding: 15px;
-  border-radius: 8px; /* arrondir un peu si tu veux */
-}
+  /* Sidebar indépendante */
+  .sidebar {
+    width: 220px;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    background: var(--global-bg-color); /* fond */
+    border: 1px solid var(--global-border-color); /* bordure */
+    color: var(--global-text-color); /* texte */
+    padding: 15px;
+    border-radius: 8px; /* arrondir un peu si tu veux */
+  }
 
-.sidebar a {
-  color: var(--global-text-color);          /* liens adaptatifs */
-  text-decoration: none;
-}
+  .sidebar a {
+    color: var(--global-text-color); /* liens adaptatifs */
+    text-decoration: none;
+  }
 
-.sidebar a:hover {
-  color: var(--global-theme-color);         /* couleur du thème */
-}
+  .sidebar a:hover {
+    color: var(--global-theme-color); /* couleur du thème */
+  }
 
-.post {}
+  .post {
+  }
 </style>
 
 <!-- Barre latérale -->

@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='http://www.creatis.insa-lyon.fr/'>CREATIS</a>, <a href='https://www.insa-lyon.fr/'> Insa Lyon</a>. 
+subtitle: <a href='http://www.creatis.insa-lyon.fr/'>CREATIS</a>, <a href='https://www.insa-lyon.fr/'> Insa Lyon</a>.
 
 profile:
   align: right

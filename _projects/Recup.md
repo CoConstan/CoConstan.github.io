@@ -1,7 +1,7 @@
 ---
 layout: page_Manipulation
 title: Récuperer des données
-description: 
+description:
 img: assets/img/12.jpg
 importance: 4
 category: ADD

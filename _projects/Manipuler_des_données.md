@@ -1,7 +1,7 @@
 ---
 layout: page_Manipulation
 title: Manipuler des données avec Pandas
-description: 
+description:
 img: assets/img/12.jpg
 importance: 4
 category: ADD
@@ -19,9 +19,9 @@ Dans le secteur privé, les data scientists cherchent souvent à associer des in
 L’un des grands atouts des outils modernes de data science — et de `Pandas` en particulier — réside dans la facilité avec laquelle ils permettent de restructurer et de combiner des sources de données pour mener une analyse intégrée.
 Ce chapitre vient consolider les notions introduites précédemment en affinant les traitements appliqués aux données. Il se concentrera principalement sur deux types d’opérations :
 
-* les statistiques descriptives par groupe ;
+- les statistiques descriptives par groupe ;
 
-* l’association de données à partir de caractéristiques communes.
+- l’association de données à partir de caractéristiques communes.
 
 Réaliser ce travail de manière simple, fiable et efficace est une compétence essentielle pour tout data scientist, tant cette tâche est fréquente dans la pratique.
 Heureusement, Pandas offre des outils puissants et intuitifs pour accomplir ce type de traitement sur des données structurées.
@@ -36,7 +36,6 @@ Le chapitre précédent utilisait quasi exclusivement la librairie `Pandas`. Nou
 !pip install xlrd --quiet
 !pip install pynsee --quiet
 ```
-
 
 ```python
 import numpy as np
@@ -56,11 +55,11 @@ np.random.seed(42)
 
 Dans ce chapitre, nous allons travailler sur des données issues de l’Insee et de l'ADEME :
 
-* Les émissions de gaz à effet de serre estimées au niveau communal par l’ADEME. Le jeu de données est disponible sur [data.gouv](https://www.data.gouv.fr/fr/datasets/inventaire-de-gaz-a-effet-de-serre-territorialise/#_) et requêtable directement dans `Python`.
+- Les émissions de gaz à effet de serre estimées au niveau communal par l’ADEME. Le jeu de données est disponible sur [data.gouv](https://www.data.gouv.fr/fr/datasets/inventaire-de-gaz-a-effet-de-serre-territorialise/#_) et requêtable directement dans `Python`.
 
-* Le [code officiel géographique](https://www.insee.fr/fr/statistiques/fichier/6800675/v_commune_2023.csv) de l'Insee. Il permet d'identifier les communes françaises à partir d'un code univoque (code INSEE). 
+- Le [code officiel géographique](https://www.insee.fr/fr/statistiques/fichier/6800675/v_commune_2023.csv) de l'Insee. Il permet d'identifier les communes françaises à partir d'un code univoque (code INSEE).
 
-* Les données [Filosofi](https://www.insee.fr/fr/metadonnees/source/serie/s1172) constituant une source d’information sur les revenus des Français à une échelle spatiale fine, élaborée par l’Insee à partir des déclarations fiscales et des données relatives aux prestations sociales. Dans notre cas, nous utiliserons les niveaux de revenu et les données de population au niveau communal, afin de les mettre en relation avec nos données d’émissions.
+- Les données [Filosofi](https://www.insee.fr/fr/metadonnees/source/serie/s1172) constituant une source d’information sur les revenus des Français à une échelle spatiale fine, élaborée par l’Insee à partir des déclarations fiscales et des données relatives aux prestations sociales. Dans notre cas, nous utiliserons les niveaux de revenu et les données de population au niveau communal, afin de les mettre en relation avec nos données d’émissions.
 
 Pour faciliter l’import de données Insee, il est recommandé d’utiliser le package `pynsee` qui simplifie l’accès aux principaux jeux de données de l’Insee disponibles sur le site web insee.fr ou via des API. La liste des jeux de données disponibles est consultable [ici](https://inseefrlab.github.io/DoReMIFaSol/articles/donnees_dispo.html).
 
@@ -88,6 +87,7 @@ emissions.head(2)
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -173,6 +173,7 @@ filosofi.head(2)
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -293,6 +294,7 @@ emissions_totales.sort_values("emissions", ascending = False).round()
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -370,7 +372,7 @@ emissions_totales.sort_values("emissions", ascending = False).round()
 </div>
 <br>
 
-Nous pouvons voir que les secteurs les plus émetteurs, à savoir le transport, l’agriculture et l’industrie hors énergie. Le fait que l’énergie soit relativement peu émettrice s’explique bien du fait du mix énergétique français où le nucléaire représente une majorité de la production électrique. 
+Nous pouvons voir que les secteurs les plus émetteurs, à savoir le transport, l’agriculture et l’industrie hors énergie. Le fait que l’énergie soit relativement peu émettrice s’explique bien du fait du mix énergétique français où le nucléaire représente une majorité de la production électrique.
 
 Mais qu’en est-il du profil d’émission des différents départements ?
 Pour répondre à cette question, il sera nécessaire d’agréger les données au niveau départemental.
@@ -379,7 +381,7 @@ Cette approche nous fournira une perspective complémentaire, différente à la 
 En `SQL`, il est très simple de découper les données pour effectuer des opérations sur des blocs cohérents, puis de rassembler les résultats dans la dimension appropriée.
 Cette logique, connue sous le nom de `split–apply–combine`, est également au cœur des langages de manipulation de données modernes — et `Pandas` [n’y fait pas exception](https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html). Pour faire cela, en `Pandas`, on utilise la méthode `groupby()`.
 
-## 3.1 Exemple 1: dénombrement par groupe 
+## 3.1 Exemple 1: dénombrement par groupe
 
 Pour illustrer le fonctionnement de `groupby()`, nous allons commencer par un exemple simple : compter le nombre de communes par département.
 
@@ -419,6 +421,7 @@ communes.groupby('DEP').agg({'COM': 'nunique'})
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -487,6 +490,7 @@ On obtient une serie indexée. Ce n'est pas pratique, on prefère un DataFrame. 
 ```python
 communes.groupby('DEP').agg({'COM': 'nunique'}).reset_index().sort_values('COM', ascending = False)
 ```
+
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -501,6 +505,7 @@ communes.groupby('DEP').agg({'COM': 'nunique'}).reset_index().sort_values('COM',
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -572,7 +577,6 @@ communes.groupby('DEP').agg({'COM': 'nunique'}).reset_index().sort_values('COM',
 </div>
 </div>
 
-
 ## 3.2 Exemple 2: agrégation par groupe
 
 Pour illustrer l'utilisation d'agréggats, nous allons utilisé le jeu de données `filosofi` pour compter la population totale par département.
@@ -585,6 +589,7 @@ filosofi["dep"] = filosofi["CODGEO"].str[:2]
 # Implicite => il faut faire attention à l'ordre des opérations (renvoie une série)
 filosofi.groupby('dep')['NBPERSMENFISC16'].sum()
 ```
+
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>dep
 01     613088.0
@@ -600,7 +605,6 @@ filosofi.groupby('dep')['NBPERSMENFISC16'].sum()
 97    1191947.0
 Name: NBPERSMENFISC16, Length: 97, dtype: float64</pre>
 </div>
-
 
 ```python
 # Explicite => plus verbeux mais plus clair (renvoie un DataFrame)
@@ -621,6 +625,7 @@ filosofi.groupby('dep').agg({'NBPERSMENFISC16': 'sum'})
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -704,12 +709,11 @@ Ce exercice utilise le jeu de données `emissions` pour calculer les émissions 
   </div>
 </details>
 
-
 # 4 **Joindre des données**
 
-Nous allons ici nous focaliser sur le cas le plus favorable qui est la situation où une information permet d’apparier de manière exacte deux bases de données. Associer des données issues de sources différentes est une tâche courante en data science. Par exemple, pour une entreprise, elle peut posseder une base de données clients et une base de données de transactions, et souhaiter les combiner pour analyser le comportement d'achat de ses clients. 
+Nous allons ici nous focaliser sur le cas le plus favorable qui est la situation où une information permet d’apparier de manière exacte deux bases de données. Associer des données issues de sources différentes est une tâche courante en data science. Par exemple, pour une entreprise, elle peut posseder une base de données clients et une base de données de transactions, et souhaiter les combiner pour analyser le comportement d'achat de ses clients.
 
-Cette structuration en étoile, est historiquement liée aux bases de données relationnelles, aujourd'hui il existe des alternatives plus flexibles sans structure *a priori* où l'information est empilée dans un datalake. Cependant, la structuration en étoile reste très utilisée dans la pratique, notamment de compartimentation de l'information. On ne donne accès qu'aux données nécessaires à une tâche précise, ce qui permet de limiter les risques de fuites de données sensibles.
+Cette structuration en étoile, est historiquement liée aux bases de données relationnelles, aujourd'hui il existe des alternatives plus flexibles sans structure _a priori_ où l'information est empilée dans un datalake. Cependant, la structuration en étoile reste très utilisée dans la pratique, notamment de compartimentation de l'information. On ne donne accès qu'aux données nécessaires à une tâche précise, ce qui permet de limiter les risques de fuites de données sensibles.
 
 On parle souvent de jointure de données, un héritage du terme JOIN en SQL. En `Pandas`, et la manière de définir les jointures (left join, right join…) est directement inspirée de SQL. Cette opération est réalisée à l’aide de la méthode `merge()`.
 
@@ -727,15 +731,15 @@ De manière général, les jointures sont effectuer sur des colonnes contenant d
 
 Il existe quatre types de jointures principales :
 
-  * **Inner join** : ne conserve que les lignes ayant des valeurs correspondantes dans les deux DataFrames. C'est le type de jointure par défaut.
+- **Inner join** : ne conserve que les lignes ayant des valeurs correspondantes dans les deux DataFrames. C'est le type de jointure par défaut.
 
-  * **Left join** : conserve toutes les lignes du DataFrame de gauche, et ajoute les colonnes du DataFrame de droite lorsque des correspondances sont trouvées. Les lignes sans correspondance dans le DataFrame de droite auront des valeurs NaN pour les colonnes ajoutées.
+- **Left join** : conserve toutes les lignes du DataFrame de gauche, et ajoute les colonnes du DataFrame de droite lorsque des correspondances sont trouvées. Les lignes sans correspondance dans le DataFrame de droite auront des valeurs NaN pour les colonnes ajoutées.
 
-  * **Right join** : conserve toutes les lignes du DataFrame de droite, et ajoute les colonnes du DataFrame de gauche lorsque des correspondances sont trouvées. Les lignes sans correspondance dans le DataFrame de gauche auront des valeurs NaN pour les colonnes ajoutées.
+- **Right join** : conserve toutes les lignes du DataFrame de droite, et ajoute les colonnes du DataFrame de gauche lorsque des correspondances sont trouvées. Les lignes sans correspondance dans le DataFrame de gauche auront des valeurs NaN pour les colonnes ajoutées.
 
-  * **Full (Outer) join** : conserve toutes les lignes des deux DataFrames, en ajoutant des valeurs NaN pour les colonnes où il n'y a pas de correspondance.
+- **Full (Outer) join** : conserve toutes les lignes des deux DataFrames, en ajoutant des valeurs NaN pour les colonnes où il n'y a pas de correspondance.
 
-Pour illustrer ces différents types de jointures, nous allons utiliser les dataframes d'exemple suivant : 
+Pour illustrer ces différents types de jointures, nous allons utiliser les dataframes d'exemple suivant :
 
 ```python
 left = pd.DataFrame({
@@ -762,6 +766,7 @@ left
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -827,6 +832,7 @@ right
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -876,6 +882,7 @@ inner_merged = left.merge(
 )
 inner_merged
 ```
+
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -890,6 +897,7 @@ inner_merged
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -946,6 +954,7 @@ left_merged = left.merge(
 )
 left_merged
 ```
+
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -960,6 +969,7 @@ left_merged
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -1038,6 +1048,7 @@ right_merged
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -1116,6 +1127,7 @@ full_merged
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
 <thead>
@@ -1209,4 +1221,3 @@ Nous allons maintenant calculer l'empreinte carbone par habitant.
     5. Regarder la corrélation entre les variables et l’empreinte carbone. Certaines variables semblent-elles pouvoir potentiellement influer sur l’empreinte carbone ?
   </div>
 </details>
-

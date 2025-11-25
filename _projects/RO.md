@@ -4,7 +4,7 @@ title: Operational Research
 description: Linear programming and graph theory
 img: assets/img/RO.jpg
 importance: 1
-category: Polytech 
+category: Polytech
 related_publications: False
 ---
 
@@ -21,8 +21,6 @@ related_publications: False
 <li><a href="https://www.youtube.com/watch?v=PMMc4VsIacU" target="_blank" rel="noopener noreferrer">Depth First Search (DFS) Explained: Algorithm, Examples, and Code</a> by Reducible</li>
 <li>The whole <a href="https://www.youtube.com/playlist?list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P" target="_blank" rel="noopener noreferrer">Graph Theory Playlist</a> by William Fiset</li>
 </ul>
-
-
 
 <h2 id="mcetoc_1icgqd2gd5a">TD (2024-2025) : </h2>
 <ul>
