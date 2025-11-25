@@ -29,14 +29,14 @@ related_publications: False
 <li><a href="/assets/pdf/RO/RO_TD1.pdf">TD1</a></li>
 <li><a href="/assets/pdf/RO/RO_TD2.pdf">TD2</a></li>
 <li><a href="/assets/pdf/RO/RO_TD3_4.pdf">TD3/4</a></li>
-<li><a href="/assets/pdf/RO/RO TD Simplexe.pdf" target="_blank" rel="noopener noreferrer">TD5</a>, Exo1 Correction, Exo2 Correction</li>
+<li><a href="/assets/pdf/RO/RO TD Simplexe.pdf" target="_blank" rel="noopener noreferrer">TD5</a>, <a href="/assets/pdf/RO/Exo1 corrigé.odp" target="_blank" rel="noopener noreferrer">Exo1 Correction</a>,  <a href="/assets/pdf/RO/Exo2 corrigé.odp" target="_blank" rel="noopener noreferrer">Exo2 Correction</a></li>
 
 <!-- <a href="/assets/pdf/RO/Exo1 corrigé.odp" target="_blank" rel="noopener noreferrer">Exo1 Correction</a>,  <a href="/assets/pdf/RO/Exo2 corrigé.odp" target="_blank" rel="noopener noreferrer">Exo2 Correction</a></li> -->
 
-<li><a href="/assets/pdf/RO/TD_theory_de_graph.pdf" target="_blank" rel="noopener noreferrer">TD6</a>, Correction</li>
+<li><a href="/assets/pdf/RO/TD_theory_de_graph.pdf" target="_blank" rel="noopener noreferrer">TD6</a>, <a href="/assets/pdf/RO/TD_theory_de_graph _correction.pdf" target="_blank" rel="noopener noreferrer">Correction</a></li>
 
 <!-- , <a href="/assets/pdf/RO/TD_theory_de_graph _correction.pdf" target="_blank" rel="noopener noreferrer">Correction</a></li> -->
-<li><a href="/assets/pdf/RO/TD Dijkstra.pdf" target="_blank" rel="noopener noreferrer">TD7</a>, Correction</li>
+<li><a href="/assets/pdf/RO/TD Dijkstra.pdf" target="_blank" rel="noopener noreferrer">TD7</a>, <a href="/assets/pdf/RO/Dijkstra corrigé.odp" target="_blank" rel="noopener noreferrer">Correction</a></li>
 
 <!-- , <a href="/assets/pdf/RO/Dijkstra corrigé.odp" target="_blank" rel="noopener noreferrer">Correction</a></li> -->
 </ul>
