@@ -95,7 +95,7 @@ jobs:
           sudo ln -s /usr/bin/convert-im6.q16 /usr/local/bin/convert
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
-          bundle exec jekyll build
+          JEKYLL_ENV=production JEKYLL_NO_PLUGINS=true bundle exec jekyll build --safe
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
