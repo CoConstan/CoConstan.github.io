@@ -29,8 +29,8 @@ Deadline pour le projet:
 | Étape                 | Date             |
 | --------------------- | ---------------- |
 | Validation des sujets | 10 décembre 2025 |
-| Rendu du projets      | XX               |
-| Soutenance            | XX               |
+| Rendu du projets      | 23 janvier 2026  |
+| Soutenance            | 29 janvier 2026  |
 
 <br>
 
