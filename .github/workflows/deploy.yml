@@ -82,7 +82,8 @@ jobs:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
       - name: Install dependencies
-          run: bundle install
+        run: |
+          bundle install
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
