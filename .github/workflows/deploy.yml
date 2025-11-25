@@ -91,6 +91,8 @@ jobs:
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
+          # FIX: convert manque dans Ubuntu 24.04 → on crée le symlink
+          sudo ln -s /usr/bin/convert-im6.q16 /usr/local/bin/convert
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
