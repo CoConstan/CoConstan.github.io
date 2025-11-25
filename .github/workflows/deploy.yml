@@ -81,9 +81,7 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
-      - name: Install dependencies
-        run: |
-          bundle install
+
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
@@ -94,11 +92,11 @@ jobs:
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
-          # FIX: convert manque dans Ubuntu 24.04 → on crée le symlink
           sudo ln -s /usr/bin/convert-im6.q16 /usr/local/bin/convert
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
-          JEKYLL_ENV=production JEKYLL_NO_PLUGINS=true bundle exec jekyll build --safe
+          bundle install --jobs 4 --retry 3
+          bundle exec jekyll build --trace
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
