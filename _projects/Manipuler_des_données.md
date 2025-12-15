@@ -389,7 +389,8 @@ Pour illustrer le fonctionnement de `groupby()`, nous allons commencer par un ex
 import requests
 from io import StringIO
 import pandas as pd
-cog_2023 = pd.read_csv(StringIO(response.text))
+url_cog_2023 = "https://www.insee.fr/fr/statistiques/fichier/6800675/v_commune_2023.csv"
+cog_2023 = pd.read_csv(url_cog_2023)
 communes = cog_2023.loc[cog_2023['TYPECOM']=="COM"] # on sélectionne uniquement les communes (pour eviter les arrondissements de Paris, Lyon, Marseille)
 communes.loc[:, ['COM', 'DEP', 'REG']].nunique()
 ```
