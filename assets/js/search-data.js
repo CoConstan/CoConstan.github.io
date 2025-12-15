@@ -33,6 +33,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Clean/";
+            },},{id: "projects-corrections-des-exercices",
+          title: 'Corrections des exercices',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Correction_manip/";
             },},{id: "projects-dlmi-2025-classification",
           title: 'DLMI 2025 - Classification',
           description: "Hands-on",
