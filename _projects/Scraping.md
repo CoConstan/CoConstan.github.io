@@ -338,5 +338,5 @@ with open("liens_math_appliquees.csv", "w", newline="", encoding="utf-8") as f:
 - [Documentation d'HTML](https://developer.mozilla.org/fr/docs/Web/HTML)
 - [Documention de requests](https://docs.python-requests.org/en/latest/index.html)
 - [Documentation de BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#)
-- La [REGEX](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet) permet de naviguer de façon très efficiente dans des ressources `HTML`.
-- Le livre Web Scraping with Python de Ryan Mitchell est disponible dans la plupart des librairies. Il est également possible de trouver la version PDF sur internet.
+- La [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet) permet de naviguer de façon très efficiente dans des ressources `HTML`.
+- Le livre Web Scraping with Python de Ryan Mitchell.
