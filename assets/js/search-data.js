@@ -48,6 +48,11 @@ ninja.data = [{
           description: "Resources for the 4th Year&#39;s Deep Learning Project at Polytech Lyon",
           section: "Projects",handler: () => {
               window.location.href = "/projects/DL_4A/";
+            },},{id: "projects-visualisation-exercices",
+          title: 'Visualisation exercices',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Exo_visu/";
             },},{id: "projects-analyse-de-données",
           title: 'Analyse de données',
           description: "Python et data science",
@@ -68,6 +73,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Manipuler_des_donn%C3%A9es/";
+            },},{id: "projects-visualisation-figées-matplotlib-seaborn",
+          title: 'Visualisation figées, Matplotlib - Seaborn',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Matplotlib/";
             },},{id: "projects-modélisation",
           title: 'Modélisation',
           description: "",
@@ -88,6 +98,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Pandas/";
+            },},{id: "projects-introduction-à-plotly",
+          title: 'Introduction à Plotly',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Plotly/";
             },},{id: "projects-les-questions-à-se-poser-face-à-un-jeu-de-données",
           title: 'Les questions à se poser face à un jeu de données',
           description: "",
@@ -107,9 +122,9 @@ ninja.data = [{
           title: 'Scraping',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/Scraping_add/";
-            },},{id: "projects-visualisation",
-          title: 'Visualisation',
+              window.location.href = "/projects/Scraping/";
+            },},{id: "projects-partie-2-visualisation",
+          title: 'Partie 2 - Visualisation',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Visualisation_ADD/";
