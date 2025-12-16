@@ -103,6 +103,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Recup/";
+            },},{id: "projects-scraping",
+          title: 'Scraping',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Scraping_add/";
             },},{id: "projects-visualisation",
           title: 'Visualisation',
           description: "",
