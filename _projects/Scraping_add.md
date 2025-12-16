@@ -1,6 +1,6 @@
 ---
 layout: page_Scraping
-title: Scraping
+title: Scraping (facultatif)
 description:
 img: assets/img/12.jpg
 importance: 4
@@ -9,4 +9,3 @@ related_publications: False
 ---
 
 # 1 **Introdution**
-

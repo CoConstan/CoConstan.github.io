@@ -5,7 +5,7 @@ description:
 img: assets/img/12.jpg
 importance: 4
 category: ADD
-related_publications: false
+related_publications: False
 ---
 
 # Notebooks
@@ -36,6 +36,3 @@ related_publications: false
 
 Dans le cas où vous ne souhaitez pas utiliser colab, vous pouvez télécharger les notebooks en cliquant sur le lien suivant :
 **[Correction_manip.zip]({{ site.baseurl }}/assets/files/Correction_manip.zip)**
-
-</br>
-
