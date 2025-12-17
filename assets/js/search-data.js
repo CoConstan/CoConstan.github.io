@@ -98,8 +98,8 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Pandas/";
-            },},{id: "projects-visualisations-réactives-matplotlib-seaborn",
-          title: 'Visualisations réactives, Matplotlib - Seaborn',
+            },},{id: "projects-visualisations-réactives-plotly-folium",
+          title: 'Visualisations réactives, Plotly - Folium',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Plotly/";
