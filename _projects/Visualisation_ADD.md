@@ -13,7 +13,7 @@ Une dimension centrale du métier de data scientist consiste à résumer l’inf
 
 Nous avons déjà abordé une composante clé de cette démarche : la construction de statistiques descriptives pertinentes et robustes. Toutefois, se limiter à une restitution brute des résultats issus de combinaisons `groupby` et `agg` dans un DataFrame `Pandas` offrirait une vision très partielle des données et restreindrait notre capacité à en tirer des enseignements approfondis. En pratique, notre cerveau comprend et interprète l’information beaucoup plus facilement lorsqu’elle est présentée sous forme de graphiques simples plutôt que dans un tableau.
 
-## La visualisation des données, un outils de communication mais pas que
+## La visualisation des données, un outil de communication mais pas que
 Les capacités cognitives humaines étant limitées, le data scientist doit s’appuyer sur des outils informatiques et statistiques pour produire des représentations synthétiques de grands volumes de données. La visualisation de données s’inscrit dans cette démarche : elle consiste à représenter visuellement des informations complexes afin d’en faciliter la compréhension, l’exploration et l’analyse. En mettant en évidence tendances, corrélations ou anomalies, elle permet de donner du sens aux données brutes et joue un rôle clé tant dans l’analyse que dans la communication des résultats auprès des experts, des décideurs et du grand public.
 
 La visualisation des données intervient à toutes les étapes d’un projet de data science, et pas uniquement lors de la phase finale de communication des résultats. Elle joue un rôle clé dès l’exploration des données, en permettant de transformer de simples enregistrements en informations porteuses de valeur, seules ou combinées entre elles.

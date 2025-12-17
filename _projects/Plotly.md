@@ -18,11 +18,11 @@ Plotly repose sur la célèbre librairie JavaScript `d3.js` et fournit un wrappe
 Il existe deux principales manières d’utiliser la librairie Python Plotly : 
 - `plotly.express` : une API user-friendly et haut niveau, qui exploite les capacités graphiques de Plotly pour faciliter la création rapide de graphiques. Son approche simplifiée permet aux utilisateurs de générer facilement une grande variété de types de graphiques avec un minimum de code.
 
-- `plotly.graph_objects` : une API qui offre un niveau de contrôle et de personnalisation plus fin. Il faut cependant un peu plus de code pour créer le même graphique par rapport à plotly.express, mais cette API reste très accessible et permet une flexibilité beaucoup plus grande pour personnaliser les graphiques.
+- `plotly.graph_objects` : une API qui offre un niveau de contrôle et de personnalisation plus fins. Il faut cependant un peu plus de code pour créer le même graphique par rapport à `plotly.express`, mais cette API reste très accessible.
 
 ## Exemple d'utilisation
 
-Dans cet exemple nous allons construire un graphique en *chandelier japonais* pour représenter des données finnacière. On commence à importer les différents package, notamment `yfinance` (yahoo finance). 
+Dans cet exemple nous allons construire un graphique en *chandelier japonais* pour représenter des données financières. On commence à importer les différents package, notamment `yfinance` (yahoo finance). 
 
 
 ```python
@@ -80,7 +80,7 @@ fig.show()
 
 Nous allons représenter la localisation des stations Vélo'v dans la métropole de Lyon. Celles-ci sont disponibles en open data sur le [site du Grand Lyon](https://data.grandlyon.com/portail/fr/jeux-de-donnees/stations-velo-v-metropole-lyon-disponibilites-temps-reel/info) et sur [data.gouv](https://www.data.gouv.fr/datasets/stations-velov-de-la-metropole-de-lyon-disponibilites-temps-reel/).
 
-Commencons par importer les données et les packages dont nous aurons besoins à savoir `folium` et `pandas`. Notez qu'il existe aussi [geopandas](https://geopandas.org/en/stable/), une version de `pandas` adatper au données géographiques, pour des raisons de simpliciter nous ne l'aborderons pas ici. 
+Commencons par importer les données et les packages dont nous aurons besoins à savoir `folium` et `pandas`. Notez qu'il existe aussi [geopandas](https://geopandas.org/en/stable/), une version de `pandas` adaptée aux données géographiques. Par souci de simplicité nous ne l'aborderons pas ici. 
 
 ```python
 import folium
@@ -90,8 +90,6 @@ from folium.plugins import MarkerCluster
 velov_data = "https://www.data.gouv.fr/api/1/datasets/r/839491c5-35a0-4520-b4e5-1552fe5d9d68"
 stations = pd.read_csv(velov_data)
 ```
-
-Nous allons maintenant créer la carte interactive en tant que tel.
 
 ```python
 # Coordonnées de Lyon
@@ -105,10 +103,10 @@ carte_lyon = folium.Map(
 )
 ```
 
-Nous allons maintenant ajouter une part une les differentes stations, notez que nous utilisons un objet appelé `MarkerCluster()`. C'est ce qui permettra lorsque l'on dezoom/zoom de degrouper/grouper les différentes stations afin d'obtenir un affichage moins chargé. Notez que les `marker` possède deux attributs assez important pour une figure interactive : 
+Nous allons maintenant ajouter une par une les differentes stations. Notez que nous utilisons un objet appelé `MarkerCluster()`. C'est ce qui permettra lorsque l'on dezoom/zoom de degrouper/grouper les différentes stations afin d'obtenir un affichage moins chargé. Notez que les `marker` possède deux attributs assez important pour une figure interactive : 
 
-- le **tooltip** qui est ce qui s'affiche lorsque l'on passe la souris sur l'objet.
-- le **popup** qui est ce qui s'affiche lorsque l'on clique sur l'objet.
+- le *tooltip* qui est ce qui s'affiche lorsque l'on passe la souris sur l'objet.
+- le *popup* qui est ce qui s'affiche lorsque l'on clique sur l'objet.
 
 ```python
 # Cluster

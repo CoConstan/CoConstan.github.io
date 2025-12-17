@@ -10,23 +10,22 @@ related_publications: False
 
 # Matplotlib
 ## Introduction
-`Matplotlib` est un package open source polyvalente de visualisation pour Python développée par John D. Hunter en 2003 pour proposer une alternative à la création de graphique `Matlab`. Cette origine assez ancienne se reflète dans la logique de construction de Matplotlib, qui peut sembler peu intuitive pour qui est habitué à l’écosystème moderne de la data science. Heureusement, de nombreuses bibliothèques s’appuient sur Matplotlib tout en proposant une syntaxe plus proche des usages et des attentes des data scientists.
+`Matplotlib` est un package open source polyvalent de visualisation pour Python développée par John D. Hunter en 2003 pour proposer une alternative à la création de graphique `Matlab`. Cette origine assez ancienne se reflète dans la logique de construction de Matplotlib, qui peut sembler peu intuitive pour qui est habitué à l’écosystème moderne de la data science. Heureusement, de nombreuses bibliothèques s’appuient sur Matplotlib tout en proposant une syntaxe plus proche des usages et des attentes des data scientists.
 
 `Matplotlib` s’organise autour de deux niveaux d'abstraction principaux : la **figure** et les **axes**. La figure agit comme une « toile » générale pouvant contenir un ou plusieurs axes, chacun servant à tracer des graphiques. Selon ce que l’on souhaite modifier, il est possible d’ajuster les paramètres de la figure ou ceux des axes. Cela rend `matplotlib` très flexible, mais aussi un peu déroutant, car il n’est pas toujours évident de savoir quel niveau manipuler pour obtenir le résultat souhaité. La Figure ci-dessous illustre tous les éléments d'une figure.
 
 <figure style="text-align: center;">
   <img src="/assets/img/anatomy.webp" alt="pandas dataframe" width="80%">
-  <figcaption><em> Anatomie d’une figure `matplotlib`, source : https://matplotlib.org/stable/users/explain/quick_start.html </em></figcaption>
+  <figcaption><em> Anatomie d’une figure `matplotlib`, source : [matplolib.org](https://matplotlib.org/stable/users/explain/quick_start.html) </em></figcaption>
 </figure>
 
 ## Matplotlib en pratique
 En pratique, il existe deux manière d'utiliser `matplotlib` : 
 
-- une approche explicite, orientée objet en utilisant `pylab`, où on crée des objets `Figure` et `Axes` et met à jour ceux-ci. Son utilisation est très semblable à l'API Matlab. 
+- une approche explicite, orientée objet en utilisant `pylab`. On crée des objets `Figure` et `Axes` et on les met à jour. Son utilisation est très semblable à l'API Matlab. 
+- une approche implicite, basée sur l’interface `pyplot`, qui utilise une succession de fonctions pour mettre à jour les objets créés implicitement. 
 
-- une approche implicite, basée sur l’interface `pyplot` qui utilise une succession de fonctions pour mettre à jour les objets créés implicitement. 
-
-Voici un exemple d'utilisation de matplotlib, implicite. Nous allons travaillez sur les données de la variation de temperature terrestre. Il s'agit d'un reproduction simplfier de [ce tutorial](https://python-graph-gallery.com/web-lollipop-with-colormap-and-arrow/)
+Voici un exemple d'utilisation de matplotlib, implicite. Nous allons travailler sur les données de la variation de température terrestre. Il s'agit d'une reproduction simplifiée de [ce tutoriel](https://python-graph-gallery.com/web-lollipop-with-colormap-and-arrow/)
 
 ```python
 import pandas as pd
@@ -54,16 +53,15 @@ plt.show()
 
 <figure style="text-align: center; cursor: pointer;" id="image-container">
     <img id="toggle-image" src="/assets/img/chap_visu/world_temp1.png" alt="worldtemp" width="70%">
-    <figcaption>Cliquez sur l'image pour la masquer/afficher</figcaption>
 </figure>
 
 
-Nous allons maintenant créer un pallete de couleur liée à la valeur de temperature à l'aide de `LinearSegmentedColormap`. 
+Nous allons maintenant créer un palette de couleur liée à la valeur de température à l'aide de `LinearSegmentedColormap`. 
 
 ```python
 colors = ["blue", "#ffe6cc", "red"]
 cmap = mcolors.LinearSegmentedColormap.from_list("BluetoRed", colors)
-# On normalise pour que la couleur ffe6cc soit la valeurs à 0° de différence
+# On normalise pour que la couleur ffe6cc soit la valeur à 0° de différence
 norm = mcolors.TwoSlopeNorm(vmin=df["Change"].min(), vcenter=0, vmax=df["Change"].max())
 
 fig, ax = plt.subplots(figsize=(15, 8), dpi=300)
@@ -71,15 +69,14 @@ fig, ax = plt.subplots(figsize=(15, 8), dpi=300)
 for i, row in df.iterrows():
     year = row["Year"]
     change = row["Change"]
-    color = cmap(norm(change))  # normalize before passing to colormap
-    ax.scatter(x=year, y=change, color=color, s=100)  # added size for visibility
+    color = cmap(norm(change))  # normaliser avant de passer à la colormap
+    ax.scatter(x=year, y=change, color=color, s=100)  # ajout d'une taille pour la visibilité
     ax.plot([year, year], [0, change], color=color, alpha=0.8)
 
 plt.show()
 ```
 <figure style="text-align: center; cursor: pointer;" id="image-container">
     <img id="toggle-image" src="/assets/img/chap_visu/world_temp2.png" alt="worldtemp" width="70%">
-    <figcaption>Cliquez sur l'image pour la masquer/afficher</figcaption>
 </figure>
 
 Nous allons maintenant personnaliser les axes en affichant uniquement les années divisible par 20 (axe X). Nous allons aussi tracer une ligne pour certaine valeurs de température (axe Y) tout en ajoutant la valeurs correspondante.
@@ -165,7 +162,7 @@ ax.text(
 ax.text(
     x=1881,
     y=0.94,
-    s="Change in global surface temperature compared to the long-term average from 1951 to 1980",
+    s="Change in global surface temperature compared to the long-term average from 1880 to 2020",
     fontsize=12,
     ha="left",
     va="top"
@@ -189,7 +186,7 @@ plt.show()
 
 
 
-Vous trouverez dans ce notebook tiré du cours d'ADD de 2023-2024 des exemples plus facile détaillants le fonctionnement de matplotlib à la fois en implicite et en explicite.
+Vous trouverez dans ce notebook tiré du cours d'ADD de 2023-2024 des exemples plus simples détaillant le fonctionnement de matplotlib à la fois en implicite et en explicite.
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
 <a href="https://drive.google.com/file/d/1rAqr-GWCB0rJYDdFoFH0i48OjLylLd4C/view?usp=sharing" style="text-decoration: none;">
     <div style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; text-align: center; transition: transform 0.2s;">
@@ -235,18 +232,18 @@ plt.show()
   });
 </script>
 
-# Pour aller plus loins
+# Pour aller plus loin
 
-Ce tutorials constituent le minimum pour faire une visualisation de données. Pour être plus à l’aise avec ces concepts, la pratique répétée est indispensable. Voici quelques sources qui vous serons toujours utile : 
+Ces tutoriels constituent le minimum pour faire une visualisation de données. Pour être plus à l’aise avec ces concepts, la pratique répétée est indispensable. Voici quelques sources qui vous serons toujours utiles : 
 
 Docs et exemple :
-* [Page web page de Matplotlib.](http://www.matplotlib.org)
-* [ Page web page de Seaborn.](https://seaborn.pydata.org/index.html)
-* [The Python Graph Gallery](https://python-graph-gallery.com/) - **un must-have**, plein d'exemple très reussi et parfois très techniques.
+* [Matplotlib](http://www.matplotlib.org).
+* [Seaborn](https://seaborn.pydata.org/index.html).
+* [The Python Graph Gallery](https://python-graph-gallery.com/) - **un must-have**, plein d'exemple très reussis et parfois très techniques.
 
 Tuto :
-* [Tutoriel sur Matplotlib.](http://www.loria.fr/~rougier/teaching/matplotlib)
-* [Autre tutoriel Matplotlib.](http://scipy-lectures.org/intro/matplotlib/index.html)
+* [Tutoriel sur Matplotlib](http://www.loria.fr/~rougier/teaching/matplotlib).
+* [Autre tutoriel Matplotlib](http://scipy-lectures.org/intro/matplotlib/index.html).
 
 Autre package très interessant : 
 
