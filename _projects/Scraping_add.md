@@ -1,5 +1,5 @@
 ---
-layout: page_intro
+layout: page_Manipulation
 title: Scraping
 description:
 img: assets/img/12.jpg
@@ -13,7 +13,7 @@ related_publications: False
 Ce cours facultatif propose :
 
 - Une introduction au web scraping et aux principales notions liées.
-- Une mise en pratique à travers un tutoriel de la librairie `Python` `BeautifulSoup`.
+- Une mise en pratique à travers un tutoriel de deux librairies `Python` : `requests` et `BeautifulSoup`.
 - Des liens vers des ressources supplémentaires.
 
 Il suppose que vous avez une connaissance préalable de la syntaxe `HTML`.
@@ -41,7 +41,7 @@ Il existe de nombreux types de requêtes. En voici deux :
   - _Structure :_ Des données sont envoyées dans le corps de la requête. Le serveur les traite et fourni une réponse adaptée
 
 Lors d'une requête `HTTP`, on peut aussi spécifier un _header_, c'est à dire un ensemble de métadonnées (données relatives à des données) qui décrit la requête.
-Comprendre la structure d'un header est important lors qu'on fait du scraping. Certains serveurs refuseront de répondre si le header n'est pas conforme.
+Comprendre la structure d'un header est important lorsqu'on fait du scraping car certains serveurs refuseront de répondre si le header n'est pas conforme.
 Ci-dessous quelques exemples de header.
 
 - `User-Agent` : identification du client (navigateur, bot, script, …)
@@ -58,35 +58,35 @@ Une requête `HTTP` produira toujours une réponse, sous la forme d'un `status-c
 ### 2.1.2 **Structure d'une page web**
 
 Une fois requêté, un serveur web répond le plus souvent par une page web. Les pages web contiennent :
-
 - une structure et un contenu, stockés en `HTML`
 - un style `CSS`
-- un ensemble d'actions réalisables, par exemple en `JavaScript`, `PHP` ou `Python`.
-  C'est généralement la partie `HTML` qui contient l'information cible : le `CSS` est propre à la page et la logique des actions est souvent inaccessible (elle est stockée sur le serveur et n'est "qu'appellée" par la page web).
-  Il existe de nombreuses ressources servant à parcourir, filtrer et trier du contenu `HTML` de façon efficiente. La librairie `Python` `BeautifulSoup` est présentée en partie 3.
+- un ensemble d'actions réalisables, par exemple en `JavaScript`, `PHP` ou `Python`. 
+
+C'est généralement la partie `HTML` qui contient l'information cible : le `CSS` est propre à la page et la logique des actions est souvent inaccessible (elle est stockée sur le serveur et n'est "qu'appellée" par la page web). 
+Il existe de nombreuses ressources servant à parcourir, filtrer et trier du contenu `HTML` de façon efficiente. La librairie `Python` `BeautifulSoup` est présentée en partie 3.
 
 ## 2.2 **Pourquoi et quand faire du web scraping ?**
 
 Certaines pages web contiennent des informations précieuses et utiles sans que leur publieur n'ait prévu de manière rapide et automatisable de les récupérer.
-C'est dans un tel contexte que le web scraping est pertinent.
+C'est dans un tel contexte que le web scraping est pertinent. 
 Comme évoqué plus haut, faire du scraping consiste à récupérer des données en utilisant des méthodes **_non prévues par les publieurs_**.
 Il s'oppose donc à l'utilisation d'API, le téléchargement de données publiques structurées (CSV, …) ou la communication directe avec les publieurs ("Pouvez-vous me fournir des données pour un projet étudiant ?").  
-Ces méthodes sont plus officielles, plus simples et souvent plus fructueuses. Il convient donc de les privilégier (ou au moins de les considérer) avant de passer au scraping.
-En outre, le scraping soulève parfois des considérations éthiques voire juridiques.
+Toutes ces méthodes sont plus officielles, plus simples et souvent plus fructueuses. Il convient donc de les privilégier (ou au moins de les considérer) avant de passer au scraping. 
+En outre, le scraping peut soulèver des considérations éthiques voire juridiques.
 
 ## 2.3 **Implications juridiques**
 
 Les sites internet interdisent souvent le scraping de leur contenu. Plusieurs raisons à cela :
 
 - Les données sont parfois sensibles (personnelles, financièrement ou politiquement chargées, …)
-- Les données sont parfois le fond de commerce du site. Si elles sont recupérables publiquement, il perd une source de revenus
+- Les données sont parfois le fond de commerce du site. Si elles sont recupérables publiquement, celui-ci perd une source de revenus
 - Faire du scraping nécessite parfois de lancer un grand nombre de requêtes `HTTP` en peu de temps. Le serveur doit donc être robuste pour y répondre, ce qui implique des coûts
 - Ils le peuvent légalement :
   - [art. L335-2 du CPI](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032655082) : les textes, images et vidéos stockées sur internet sont protégés. Leur scraping sans autorisation peut mener à 3 ans d'emprisonnement et 300 000€ d'amende. Les données brutes et les informations factuelles ne sont pas concernées.
-  - [art. L342-1 du CPI](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006279247) : les bases de données nécessitant un investissement substantiel sont protégées.
+  - [art. L342-1 du CPI](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006279247) : les extractions substantielles de données depuis une base de données sont généralement interdites par le producteur.
   - [RGPD](https://www.cnil.fr/fr/comprendre-le-rgpd/les-six-grands-principes-du-rgpd) : les données personnelles ont une législation spécifique, plus stricte.
   - Le scraping peut être explicitement interdit dans les CGU du site.
-  - Les sites fournissent le plus souvent un fichier `robots.txt` à leur racine (ex. : https://fr.wikipedia.org/robots.txt). Ce fichier indique aux scripts automatisés (ex. : algorithmes de référencement de Google) à quelles portions du sites ils ont le droit d'accéder. Le contourner peut être interpété comme une volonté de nuire.
+  - Les sites fournissent le plus souvent un fichier `robots.txt` à leur racine (ex. : [https://fr.wikipedia.org/robots.txt](https://fr.wikipedia.org/robots.txt)). Ce fichier indique aux scripts automatisés (ex. : algorithmes de référencement de Google) à quelles portions du sites ils ont le droit d'accéder. Le contourner peut être interpété comme une volonté de nuire.
   - [art. 323-1 et suivants du code pénal](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047052655/2023-12-21) : À toutes ces interdictions s'ajoute la juridiction relative à l'utilisation de méthodes frauduleuses (piratage informatique).
 
 Il convient de respecter les différents cadres juridiques lorsque vous faites du web scraping. En outre, vous pouvez appliquer les bonnes pratiques suivantes :
@@ -165,7 +165,7 @@ Les mêmes remarques s'appliquent à l'utilisation de cookies.
 
 ### 3.2.3 **Paramètres d'URL**
 
-De nombreux sites web passent des informations dans l’URL sous forme de paramètres de requête (ou query string), par exemple :
+De nombreux sites web passent des informations dans l’URL sous forme de paramètres de requête (ou query string). Par exemple :
 
 > https://fr.wikipedia.org/w/index.php?title=Mathématiques_appliquées&printable=yes
 
@@ -176,7 +176,7 @@ Ici, l'URL est composée de :
   - title=Mathématiques_appliquées
   - printable=yes
 
-Une bonne pratique est de ne pas construire cette chaîne "à la main" : on laisse `requests` encoder les paramètres grâce à l'argument `params`. Cela évite notamment les erreurs dues aux caractères spéciaux, accents (surtout en français), espaces, …
+Une bonne pratique est de ne pas construire cette chaîne "à la main" : on laisse `requests` encoder les paramètres grâce à l'argument `params`. Cela évite, entre autres, les erreurs dues aux caractères spéciaux, accents (surtout en français), espaces, …
 
 ```python
 import requests
@@ -187,7 +187,8 @@ headers = {
 }
 
 params = {
-    "title": "Mathématiques_appliquées"
+    "title": "Mathématiques_appliquées",
+    "printable": "yes"
 }
 
 response = requests.get(url, headers=headers, params=params)
@@ -236,7 +237,7 @@ print(soup.find("h1"))   # Première balise <h1> de la page
 
 - `element.parent` : renvoie la balise parente immédiate.
 
-- `element.parents` : itérateur sur tous les ancêtres (parent, grand-parent, etc.).
+- `element.parents` : itérateur sur tous les ancêtres (parent, grand-parent, …).
 
 - `element.children` : itérateur sur les enfants directs (balises et parfois textes).
 
@@ -262,14 +263,18 @@ Ces méthodes sont particulièrement utiles lorsqu’on a identifié un point d�
 ### 3.3.2 **Recherche d'éléments et extraction d''informations utiles**
 
 Les méthodes `find()` et `find_all()` permettent respectivement de trouver le premier élément et l'ensemble des éléments qui correspondent à un ensemble de conditions.
-Ces conditions peuvent être exprimées sous la forme d'attributs `id`, `class`, … :
+Ces conditions peuvent être exprimées sous la forme d'attributs `id`, `class`, …
 
 ```python
 # Recherche par id
 voir_aussi = soup.find(id = "Voir_aussi").parent.find_next_sibling("ul")
 for child in voir_aussi.children:
     print(child.get_text())
+```
 
+Dans l'exemple précédent, la méthode `get_text()` a servi à extraire le texte contenu dans chaque élément `child`. Elle supporte plusieurs paramètres (cf. `strip = True` plus haut). 
+
+```python
 # Recherche par classe CSS
 files = soup.find_all(class_ = "mw-file-element")
 for file in files:
@@ -277,26 +282,25 @@ for file in files:
     print("Dimensions : ", file['width'], "*", file['height'], "px", sep = "")
 ```
 
-Dans l'exemple précédent, la méthode `get_text()` a servi à extraire le texte contenu dans chaque élément `child`. Elle supporte plusieurs paramètres (cf. ci dessus `strip = True`).
-Nous avons également extrait des valeurs d'attribut en utilisant l'opérateur `[]` : `BeautifulSoup` procède automatiquement à une traduction `HTML > dictionnaire Python` (dans les grandes lignes).
+Ici, nous avons extrait des valeurs d'attribut en utilisant l'opérateur `[]` : `BeautifulSoup` procède automatiquement à une traduction `HTML > dictionnaire Python` (dans les grandes lignes). 
 Il est aussi possible d'utiliser `get()`, ce qui peut éviter des erreurs d'exécution en définissant une valeur par défaut si l'attribut n'existe pas :
 
 ```python
 soup.find("a").get("attribut-inexistant", None)
 ```
 
-Comme vous l'aurez compris, `BeautifulSoup` reproduit la structure `HTML` originelle. Plus vous aurez une connaissance fine et profonde du site que vous analysez, plus votre scraping sera efficace.
+Comme vous l'aurez compris, `BeautifulSoup` reproduit la structure `HTML` originelle. Plus vous aurez une connaissance fine et profonde du site que vous analysez, plus votre scraping sera efficace et efficient.
 
 ### 3.3.4 **Conversion en données exploitables**
 
 Le but du scraping est de transformer le `HTML` brut en données structurées et exploitables (`list`, `dict`, fichiers, …).
-Dans cette dernière partie, nous allons construire un fichier CSV répertoriant tous les liens internes (vers `wikipedia.org`) de la page Mathématiques appliquées de Wikipédia.
+Dans cette dernière partie, nous allons construire un fichier CSV répertoriant tous les liens internes (vers d'autres pages du site `wikipedia.org`) de la page Mathématiques appliquées de Wikipédia.
 
 D'abord, on récupère tous les liens de la pages (balises `<a>`).
 
 ```python
-content = soup.find("div", id="mw-content-text")
-raw_links = content.find_all("a")
+page_content = soup.find("div", id = "mw-content-text")
+raw_links = page_content.find_all("a")
 ```
 
 Et on les stocke dans un tableau de dictionnaires.
@@ -309,7 +313,7 @@ for raw_link in raw_links:
     href = raw_link.get("href", "")
     name = raw_link.get_text(strip = True)
 
-    # On ne garde que les liens internes vers d'autres pages Wikipédia
+    # On ne garde que les liens vers d'autres pages Wikipédia
     if href.startswith("/wiki/") and not href.startswith("/wiki/Fichier:"):
         links.append({
             "name": name,
@@ -317,9 +321,8 @@ for raw_link in raw_links:
         })
 ```
 
-Cette structure `Python` est facile à exploiter puisque tout l'écosystème `Python` la supporte. On peut :
-
-- L'exporter vers un fichier CSV, JSON ou autre
+La structure ainsi produite, `links`, est un dictionnaire `Python`. Elle est donc facile à exploiter puisque tout l'écosystème `Python` la supporte. On peut :
+- L'exporter vers un fichier (CSV, JSON, …)
 - L'analyser avec `Pandas`
 - La stocker dans une base de données
 - …
@@ -328,7 +331,7 @@ Cette structure `Python` est facile à exploiter puisque tout l'écosystème `Py
 import csv
 
 with open("liens_math_appliquees.csv", "w", newline="", encoding="utf-8") as f:
-    writer = csv.DictWriter(f, fieldnames=["name", "url"])
+    writer = csv.DictWriter(f, fieldnames = ["name", "url"])
     writer.writeheader()
     writer.writerows(links)
 ```
@@ -338,5 +341,5 @@ with open("liens_math_appliquees.csv", "w", newline="", encoding="utf-8") as f:
 - [Documentation d'HTML](https://developer.mozilla.org/fr/docs/Web/HTML)
 - [Documention de requests](https://docs.python-requests.org/en/latest/index.html)
 - [Documentation de BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#)
-- La [REGEX](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet) permet de naviguer de façon très efficiente dans des ressources `HTML`.
-- Le livre Web Scraping with Python de Ryan Mitchell est disponible dans la plupart des librairies. Il est également possible de trouver la version PDF sur internet.
+- La [RegEx](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet), qui permet de naviguer de façon très efficiente dans des ressources `HTML`.
+- Le livre Web Scraping with Python de Ryan Mitchell.
