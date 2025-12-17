@@ -1,6 +1,6 @@
 ---
 layout: page_Visualisation
-title: Visualisations réactives, Matplotlib - Seaborn
+title: Visualisations réactives, Plotly - Folium
 description:
 img: assets/img/12.jpg
 importance: 3
