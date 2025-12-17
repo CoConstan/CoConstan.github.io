@@ -1,6 +1,6 @@
 ---
 layout: page_Visualisation
-title: Visualisation figées, Matplotlib - Seaborn
+title: Visualisations figées, Matplotlib - Seaborn
 description:
 img: assets/img/12.jpg
 importance: 3
@@ -19,6 +19,7 @@ related_publications: False
   <figcaption><em> Anatomie d’une figure `matplotlib`, source : https://matplotlib.org/stable/users/explain/quick_start.html </em></figcaption>
 </figure>
 
+## Matplotlib en pratique
 En pratique, il existe deux manière d'utiliser `matplotlib` : 
 
 - une approche explicite, orientée objet en utilisant `pylab`, où on crée des objets `Figure` et `Axes` et met à jour ceux-ci. Son utilisation est très semblable à l'API Matlab. 
