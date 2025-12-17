@@ -73,8 +73,8 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Manipuler_des_donn%C3%A9es/";
-            },},{id: "projects-visualisation-figées-matplotlib-seaborn",
-          title: 'Visualisation figées, Matplotlib - Seaborn',
+            },},{id: "projects-visualisations-figées-matplotlib-seaborn",
+          title: 'Visualisations figées, Matplotlib - Seaborn',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Matplotlib/";
@@ -98,8 +98,8 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Pandas/";
-            },},{id: "projects-introduction-à-plotly",
-          title: 'Introduction à Plotly',
+            },},{id: "projects-visualisations-réactives-matplotlib-seaborn",
+          title: 'Visualisations réactives, Matplotlib - Seaborn',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Plotly/";
