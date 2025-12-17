@@ -25014,14 +25014,12 @@
                               x: g / 2,
                               y: g / 2,
                             }),
-                              b
-                                .select("rect")
-                                .attr({
-                                  width: r._width - 2 * g + ed.scrollBarWidth + ed.scrollBarMargin,
-                                  height: r._effHeight - 2 * g,
-                                  x: g,
-                                  y: g + _e,
-                                }),
+                              b.select("rect").attr({
+                                width: r._width - 2 * g + ed.scrollBarWidth + ed.scrollBarMargin,
+                                height: r._effHeight - 2 * g,
+                                x: g,
+                                y: g + _e,
+                              }),
                               Dh.setClipUrl(k, a, e),
                               Fe(_e, N, oe),
                               _.on("wheel", function () {
