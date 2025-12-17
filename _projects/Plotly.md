@@ -10,20 +10,21 @@ related_publications: False
 
 # Plotly
 
-## Introduction 
+## Introduction
+
 `Plotly` est une librairie Python permettant de créer des graphiques interactifs. Avec un graphique Plotly, il est possible d’afficher des infobulles sur des points d’intérêt, de zoomer sur des zones spécifiques, etc... Vous trouverez la doc [ici](https://docs.plotly.com/).
 
 Plotly repose sur la célèbre librairie JavaScript `d3.js` et fournit un wrapper `Python`, ce qui permet de construire directement depuis Python des graphiques interactifs et esthétiquement remarquables.
 
-Il existe deux principales manières d’utiliser la librairie Python Plotly : 
+Il existe deux principales manières d’utiliser la librairie Python Plotly :
+
 - `plotly.express` : une API user-friendly et haut niveau, qui exploite les capacités graphiques de Plotly pour faciliter la création rapide de graphiques. Son approche simplifiée permet aux utilisateurs de générer facilement une grande variété de types de graphiques avec un minimum de code.
 
 - `plotly.graph_objects` : une API qui offre un niveau de contrôle et de personnalisation plus fins. Il faut cependant un peu plus de code pour créer le même graphique par rapport à `plotly.express`, mais cette API reste très accessible.
 
 ## Exemple d'utilisation
 
-Dans cet exemple nous allons construire un graphique en *chandelier japonais* pour représenter des données financières. On commence à importer les différents package, notamment `yfinance` (yahoo finance). 
-
+Dans cet exemple nous allons construire un graphique en _chandelier japonais_ pour représenter des données financières. On commence à importer les différents package, notamment `yfinance` (yahoo finance).
 
 ```python
 import plotly.graph_objects as go
@@ -71,16 +72,17 @@ fig.show()
     style="border:none">
 </iframe>
 
-# Folium 
+# Folium
+
 ## Introduction
 
-`Folium` est une bibliothèque `Python` dédiée à la création de cartes interactives basées sur `Leaflet.js`. Elle permet de visualiser facilement des données géographiques (points, polygones, couches, marqueurs, heatmaps, etc.) directement dans un navigateur web ou un notebook Jupyter. `Folium` est particulièrement appréciée en data science et en géospatial car elle combine la simplicité de Python avec la puissance des cartes web interactives, sans nécessiter de connaissances approfondies en JavaScript. La doc est disponible [ici](https://python-visualization.github.io/folium/latest/). 
+`Folium` est une bibliothèque `Python` dédiée à la création de cartes interactives basées sur `Leaflet.js`. Elle permet de visualiser facilement des données géographiques (points, polygones, couches, marqueurs, heatmaps, etc.) directement dans un navigateur web ou un notebook Jupyter. `Folium` est particulièrement appréciée en data science et en géospatial car elle combine la simplicité de Python avec la puissance des cartes web interactives, sans nécessiter de connaissances approfondies en JavaScript. La doc est disponible [ici](https://python-visualization.github.io/folium/latest/).
 
 ## Exemple pratique : disponibilité des vélo'v à Lyon
 
 Nous allons représenter la localisation des stations Vélo'v dans la métropole de Lyon. Celles-ci sont disponibles en open data sur le [site du Grand Lyon](https://data.grandlyon.com/portail/fr/jeux-de-donnees/stations-velo-v-metropole-lyon-disponibilites-temps-reel/info) et sur [data.gouv](https://www.data.gouv.fr/datasets/stations-velov-de-la-metropole-de-lyon-disponibilites-temps-reel/).
 
-Commencons par importer les données et les packages dont nous aurons besoins à savoir `folium` et `pandas`. Notez qu'il existe aussi [geopandas](https://geopandas.org/en/stable/), une version de `pandas` adaptée aux données géographiques. Par souci de simplicité nous ne l'aborderons pas ici. 
+Commencons par importer les données et les packages dont nous aurons besoins à savoir `folium` et `pandas`. Notez qu'il existe aussi [geopandas](https://geopandas.org/en/stable/), une version de `pandas` adaptée aux données géographiques. Par souci de simplicité nous ne l'aborderons pas ici.
 
 ```python
 import folium
@@ -103,10 +105,10 @@ carte_lyon = folium.Map(
 )
 ```
 
-Nous allons maintenant ajouter une par une les differentes stations. Notez que nous utilisons un objet appelé `MarkerCluster()`. C'est ce qui permettra lorsque l'on dezoom/zoom de degrouper/grouper les différentes stations afin d'obtenir un affichage moins chargé. Notez que les `marker` possède deux attributs assez important pour une figure interactive : 
+Nous allons maintenant ajouter une par une les differentes stations. Notez que nous utilisons un objet appelé `MarkerCluster()`. C'est ce qui permettra lorsque l'on dezoom/zoom de degrouper/grouper les différentes stations afin d'obtenir un affichage moins chargé. Notez que les `marker` possède deux attributs assez important pour une figure interactive :
 
-- le *tooltip* qui est ce qui s'affiche lorsque l'on passe la souris sur l'objet.
-- le *popup* qui est ce qui s'affiche lorsque l'on clique sur l'objet.
+- le _tooltip_ qui est ce qui s'affiche lorsque l'on passe la souris sur l'objet.
+- le _popup_ qui est ce qui s'affiche lorsque l'on clique sur l'objet.
 
 ```python
 # Cluster
@@ -129,6 +131,7 @@ for _, row in stations.iterrows():
 #affichage
 carte_lyon
 ```
+
 <iframe
     src="/notebooks/random/carte_velov_lyon.html" 
     width="700" 

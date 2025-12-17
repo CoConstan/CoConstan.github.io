@@ -58,20 +58,21 @@ Une requête `HTTP` produira toujours une réponse, sous la forme d'un `status-c
 ### 2.1.2 **Structure d'une page web**
 
 Une fois requêté, un serveur web répond le plus souvent par une page web. Les pages web contiennent :
+
 - une structure et un contenu, stockés en `HTML`
 - un style `CSS`
-- un ensemble d'actions réalisables, par exemple en `JavaScript`, `PHP` ou `Python`. 
+- un ensemble d'actions réalisables, par exemple en `JavaScript`, `PHP` ou `Python`.
 
-C'est généralement la partie `HTML` qui contient l'information cible : le `CSS` est propre à la page et la logique des actions est souvent inaccessible (elle est stockée sur le serveur et n'est "qu'appellée" par la page web). 
+C'est généralement la partie `HTML` qui contient l'information cible : le `CSS` est propre à la page et la logique des actions est souvent inaccessible (elle est stockée sur le serveur et n'est "qu'appellée" par la page web).
 Il existe de nombreuses ressources servant à parcourir, filtrer et trier du contenu `HTML` de façon efficiente. La librairie `Python` `BeautifulSoup` est présentée en partie 3.
 
 ## 2.2 **Pourquoi et quand faire du web scraping ?**
 
 Certaines pages web contiennent des informations précieuses et utiles sans que leur publieur n'ait prévu de manière rapide et automatisable de les récupérer.
-C'est dans un tel contexte que le web scraping est pertinent. 
+C'est dans un tel contexte que le web scraping est pertinent.
 Comme évoqué plus haut, faire du scraping consiste à récupérer des données en utilisant des méthodes **_non prévues par les publieurs_**.
 Il s'oppose donc à l'utilisation d'API, le téléchargement de données publiques structurées (CSV, …) ou la communication directe avec les publieurs ("Pouvez-vous me fournir des données pour un projet étudiant ?").  
-Toutes ces méthodes sont plus officielles, plus simples et souvent plus fructueuses. Il convient donc de les privilégier (ou au moins de les considérer) avant de passer au scraping. 
+Toutes ces méthodes sont plus officielles, plus simples et souvent plus fructueuses. Il convient donc de les privilégier (ou au moins de les considérer) avant de passer au scraping.
 En outre, le scraping peut soulèver des considérations éthiques voire juridiques.
 
 ## 2.3 **Implications juridiques**
@@ -272,7 +273,7 @@ for child in voir_aussi.children:
     print(child.get_text())
 ```
 
-Dans l'exemple précédent, la méthode `get_text()` a servi à extraire le texte contenu dans chaque élément `child`. Elle supporte plusieurs paramètres (cf. `strip = True` plus haut). 
+Dans l'exemple précédent, la méthode `get_text()` a servi à extraire le texte contenu dans chaque élément `child`. Elle supporte plusieurs paramètres (cf. `strip = True` plus haut).
 
 ```python
 # Recherche par classe CSS
@@ -282,7 +283,7 @@ for file in files:
     print("Dimensions : ", file['width'], "*", file['height'], "px", sep = "")
 ```
 
-Ici, nous avons extrait des valeurs d'attribut en utilisant l'opérateur `[]` : `BeautifulSoup` procède automatiquement à une traduction `HTML > dictionnaire Python` (dans les grandes lignes). 
+Ici, nous avons extrait des valeurs d'attribut en utilisant l'opérateur `[]` : `BeautifulSoup` procède automatiquement à une traduction `HTML > dictionnaire Python` (dans les grandes lignes).
 Il est aussi possible d'utiliser `get()`, ce qui peut éviter des erreurs d'exécution en définissant une valeur par défaut si l'attribut n'existe pas :
 
 ```python
@@ -322,6 +323,7 @@ for raw_link in raw_links:
 ```
 
 La structure ainsi produite, `links`, est un dictionnaire `Python`. Elle est donc facile à exploiter puisque tout l'écosystème `Python` la supporte. On peut :
+
 - L'exporter vers un fichier (CSV, JSON, …)
 - L'analyser avec `Pandas`
 - La stocker dans une base de données
