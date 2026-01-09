@@ -78,8 +78,8 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Matplotlib/";
-            },},{id: "projects-modélisation",
-          title: 'Modélisation',
+            },},{id: "projects-partie-3-modélisation",
+          title: 'Partie 3 - Modélisation',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Modelisation_ADD/";
@@ -123,6 +123,16 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Scraping/";
+            },},{id: "projects-apprentissage-supervisé",
+          title: 'Apprentissage supervisé',
+          description: "Régression et classification.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Supervised/";
+            },},{id: "projects-apprentissage-non-supervisé",
+          title: 'Apprentissage non supervisé',
+          description: "Clustering, Réduction de dimension, détéction d&#39;anomalie",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Unsupervised/";
             },},{id: "projects-partie-2-visualisation",
           title: 'Partie 2 - Visualisation',
           description: "",
