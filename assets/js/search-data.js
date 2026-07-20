@@ -3,13 +3,27 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-about",
-    title: "about",
+    id: "nav-bio",
+    title: "Bio",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-cv",
+  },{id: "nav-news",
+          title: "News",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-presentations",
+          title: "Presentations",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/presentation/";
+          },
+        },{id: "nav-cv",
           title: "cv",
           description: "",
           section: "Navigation",
@@ -28,116 +42,74 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "projects-nettoyer-des-données",
-          title: 'Nettoyer des données',
+            },},{id: "news-began-my-phd-under-the-supervision-of-david-sarrut-and-ane-etxebeste-at-creatis-and-insa-lyon",
+          title: 'Began my PhD under the supervision of David SARRUT and Ane ETXEBESTE at...',
           description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Clean/";
-            },},{id: "projects-corrections-des-exercices",
-          title: 'Corrections des exercices',
+          section: "News",},{id: "news-presented-at-ai-wild-west-workshop",
+          title: 'Presented at AI WILD West Workshop.',
           description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Correction_manip/";
-            },},{id: "projects-dlmi-2025-classification",
+          section: "News",},{id: "news-presented-at-iabm-2026-conference",
+          title: 'Presented at IABM 2026 conference.',
+          description: "",
+          section: "News",},{id: "news-presented-at-the-2026-ai-for-reconstruction-in-biomedical-imaging-symposium-in-london",
+          title: 'Presented at the 2026 AI for Reconstruction in Biomedical Imaging Symposium in London....',
+          description: "",
+          section: "News",},{id: "news-the-work-i-did-during-my-master-s-thesis-on-novelty-detection-algorithms-for-drug-screening-was-published-in-acs-infectious-diseases",
+          title: 'The work I did during my Master’s thesis on novelty detection algorithms for...',
+          description: "",
+          section: "News",},{id: "news-our-ieee-mic-2026-submission-was-accepted-for-a-short-talk-and-a-poster-presentation",
+          title: 'Our IEEE MIC 2026 submission was accepted for a short talk and a...',
+          description: "",
+          section: "News",},{id: "presentations-unrolled-mapem-for-spect-reconstruction",
+          title: 'Unrolled MAPEM for SPECT reconstruction',
+          description: "",
+          section: "Presentations",handler: () => {
+              window.location.href = "/presentations/AIWILDWest/";
+            },},{id: "presentations-unrolled-mapem-for-spect-reconstruction",
+          title: 'Unrolled MAPEM for SPECT reconstruction',
+          description: "",
+          section: "Presentations",handler: () => {
+              window.location.href = "/presentations/IABM2026/";
+            },},{id: "presentations-jacobian-free-unrolling-memory-efficient-unrolled-network-for-3d-spect-reconstruction",
+          title: 'Jacobian-Free Unrolling: memory-efficient unrolled network for 3D SPECT reconstruction',
+          description: "",
+          section: "Presentations",handler: () => {
+              window.location.href = "/presentations/SynRBI/";
+            },},{id: "teaching-analyse-de-données",
+          title: 'Analyse de données',
+          description: "Python et Data Sciences",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/analyse-de-donnees/";
+            },},{id: "teaching-dlmi-2025-classification",
           title: 'DLMI 2025 - Classification',
           description: "Hands-on",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/DLMI2025/";
-            },},{id: "projects-deep-learning-project-4a",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/DLMI2025/";
+            },},{id: "teaching-deep-learning-project-4a",
           title: 'Deep Learning Project - 4A',
           description: "Resources for the 4th Year&#39;s Deep Learning Project at Polytech Lyon",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/DL_4A/";
-            },},{id: "projects-visualisation-exercices",
-          title: 'Visualisation exercices',
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/DL_4A/";
+            },},{id: "teaching-tp0-introduction-à-python",
+          title: 'TP0 - Introduction à Python',
           description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Exo_visu/";
-            },},{id: "projects-analyse-de-données",
-          title: 'Analyse de données',
-          description: "Python et data science",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Intro_ADD/";
-            },},{id: "projects-intro-python",
-          title: 'Intro Python',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Intro_python_ADD/";
-            },},{id: "projects-partie-1-manipulation-de-données",
-          title: 'Partie 1 - Manipulation de données',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Manipulation_ADD/";
-            },},{id: "projects-manipuler-des-données-avec-pandas",
-          title: 'Manipuler des données avec Pandas',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Manipuler_des_donn%C3%A9es/";
-            },},{id: "projects-visualisations-figées-matplotlib-seaborn",
-          title: 'Visualisations figées, Matplotlib - Seaborn',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Matplotlib/";
-            },},{id: "projects-partie-3-modélisation",
-          title: 'Partie 3 - Modélisation',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Modelisation_ADD/";
-            },},{id: "projects-évaluation",
-          title: 'Évaluation',
-          description: "Attendus et critères de notation",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Notation/";
-            },},{id: "projects-numpy",
-          title: 'Numpy',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Numpy/";
-            },},{id: "projects-introduction-à-pandas",
-          title: 'Introduction à Pandas',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Pandas/";
-            },},{id: "projects-visualisations-réactives-plotly-folium",
-          title: 'Visualisations réactives, Plotly - Folium',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Plotly/";
-            },},{id: "projects-les-questions-à-se-poser-face-à-un-jeu-de-données",
-          title: 'Les questions à se poser face à un jeu de données',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Question/";
-            },},{id: "projects-operational-research",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/analyse-de-donnees/introduction-python/";
+            },},{id: "teaching-operational-research",
           title: 'Operational Research',
           description: "Linear programming and graph theory",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/RO/";
-            },},{id: "projects-récuperer-des-données",
-          title: 'Récuperer des données',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Recup/";
-            },},{id: "projects-scraping",
-          title: 'Scraping',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Scraping/";
-            },},{id: "projects-apprentissage-supervisé",
-          title: 'Apprentissage supervisé',
-          description: "Régression et classification.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Supervised/";
-            },},{id: "projects-apprentissage-non-supervisé",
-          title: 'Apprentissage non supervisé',
-          description: "Clustering, Réduction de dimension, détéction d&#39;anomalie",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Unsupervised/";
-            },},{id: "projects-partie-2-visualisation",
-          title: 'Partie 2 - Visualisation',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Visualisation_ADD/";
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/RO/";
+            },},{id: "teaching-statistiques-et-applications-médicales-avancées",
+          title: 'Statistiques et applications médicales avancées',
+          description: "Supports de cours et travaux pratiques",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/statistiques-applications-medicales/";
+            },},{id: "teaching-traitement-des-signaux-physiologiques",
+          title: 'Traitement des signaux physiologiques',
+          description: "Supports de cours et travaux pratiques",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/traitement-signaux-physiologiques/";
             },},{
         id: 'social-email',
         title: 'email',
