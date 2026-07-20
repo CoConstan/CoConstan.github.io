@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Corentin Constanza",
-    "label": "Scientist",
+    "label": "PhD Student",
     "image": "",
     "email": "corentin.constanza@creatis.insa-lyon.fr",
     "phone": "",
     "url": "https://coconstan.github.io",
-    "summary": "A French scientist in Inverse Problem solving for Medical Imaging",
+    "summary": "A French PhD Student in Inverse Problem solving for Medical Imaging",
     "location": {
       "address": "28 rue Laënnec",
       "postalCode": "69373",
