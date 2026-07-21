@@ -11,9 +11,7 @@ permalink: /teaching/analyse-de-donnees/
 related_publications: false
 ---
 
-Ce cours est destiné aux élèves de 3A MAM de Polytech Lyon dans le cadre du module Analyse de données. Il a pour principal objectif d'initier les élèves à la data science, une discipline scientifique très large à la frontière des mathématiques, de la statistique et de l'informatique. Ce cours vise un apprentissage pratique de la démarche scientifique rigoureuse à adopter face à des données, des problèmes rencontrés et des solutions disponibles pour tenter de les résoudre. Pour ce faire, nous nous concentrerons sur l'apprentissage d'un outil pratiquement indispensable pour résoudre ces problèmes : le langage Python.
-
-En soi, Python n'est qu'un prétexte et un outil. Si demain, pour une raison ou une autre, Python n'est plus utilisé (ce qui est très improbable), ce cours devrait vous permettre d'acquérir les bons réflexes face à un jeu de données.
+Ce cours est destiné aux élèves de 3A MAM de Polytech Lyon dans le cadre du module Analyse de données. Il a pour principal objectif d'initier les élèves à la data science, une discipline scientifique très large à la frontière des mathématiques, de la statistique et de l'informatique. Ce cours vise un apprentissage pratique de la démarche scientifique à adopter face à des données, des problèmes rencontrés et des solutions disponibles pour tenter de les résoudre. Pour ce faire, nous nous concentrerons sur l'apprentissage d'un outil pratiquement indispensable pour résoudre ces problèmes : le langage Python.
 
 Ce cours est une actualisation du cours de Patrice Mazel réalisée par **Corentin Constanza** et **Salomon Van Ginneken**, les sources utilisées sont :
 
