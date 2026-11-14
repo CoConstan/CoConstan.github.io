@@ -19,6 +19,8 @@ Ce cours est une actualisation du cours de Patrice Mazel réalisée par **Corent
 - Le livre [Python for Data Analysis, 3E](https://wesmckinney.com/book/), de Wes McKinney, principal auteur de la bibliothèque pandas.
 - Le cours [Formation d’initiation à Python dans le SSP](https://inseefrlab.github.io/formation-python-initiation/) de l'INSEE.
 
+<a class="btn btn-primary" href="{{ site.baseurl }}/teaching/analyse-de-donnees/notation/" role="button">Notation du cours</a>
+
 ## TP
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
