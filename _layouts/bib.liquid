@@ -157,6 +157,8 @@
       {% capture entrytype %}<em>In {{ entry.booktitle }}</em>{% endcapture %}
     {% elsif thesis contains entry.type %}
       {% capture entrytype %}<em>{{ entry.school }}</em>{% endcapture %}
+    {% elsif entry.howpublished %}
+      {% capture entrytype %}<em>{{ entry.howpublished }}</em>{% endcapture %}
     {% else %}
       {% capture entrytype %}{% endcapture %}
     {% endif %}
@@ -252,6 +254,12 @@
       {% endif %}
       {% if entry.website %}
         <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
+      {% endif %}
+      {% if entry.hal %}
+        <a href="{{ entry.hal }}" class="btn btn-sm z-depth-0" role="button">HAL</a>
+      {% endif %}
+      {% if entry.proceedings %}
+        <a href="{{ entry.proceedings }}" class="btn btn-sm z-depth-0" role="button">Proceedings</a>
       {% endif %}
     </div>
     {% if site.enable_publication_badges %}
