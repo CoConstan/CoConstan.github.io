@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/news/";
           },
+        },{id: "nav-publications",
+          title: "Publications",
+          description: "Publications grouped by type.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
         },{id: "nav-presentations",
           title: "Presentations",
           description: "",
@@ -60,6 +67,12 @@ ninja.data = [{
           section: "News",},{id: "news-our-ieee-mic-2026-submission-was-accepted-for-a-short-talk-and-a-poster-presentation",
           title: 'Our IEEE MIC 2026 submission was accepted for a short talk and a...',
           description: "",
+          section: "News",},{id: "news-our-paper-jacobian-free-unrolling-memory-efficient-unrolled-network-for-3d-spect-reconstruction-has-been-accepted-for-publication-in-ieee-transactions-on-radiation-and-plasma-medical-sciences-and-is-now-available-via-its-doi",
+          title: 'Our paper, Jacobian-Free Unrolling: memory-efficient unrolled network for 3D SPECT reconstruction, has been...',
+          description: "",
+          section: "News",},{id: "news-i-had-the-opportunity-to-present-my-work-on-relaxed-unrolled-networks-at-the-2026-ieee-nss-mic-rtsd-international-conference-in-granada-spain",
+          title: 'I had the opportunity to present my work on relaxed unrolled networks at...',
+          description: "",
           section: "News",},{id: "presentations-unrolled-mapem-for-spect-reconstruction",
           title: 'Unrolled MAPEM for SPECT reconstruction',
           description: "",
@@ -75,6 +88,11 @@ ninja.data = [{
           description: "",
           section: "Presentations",handler: () => {
               window.location.href = "/presentations/SynRBI/";
+            },},{id: "presentations-unrolled-relaxed-algorithm-for-3d-spect-reconstruction",
+          title: 'Unrolled relaxed algorithm for 3D SPECT reconstruction',
+          description: "",
+          section: "Presentations",handler: () => {
+              window.location.href = "/presentations/NSSMICRTSD2026/";
             },},{id: "teaching-analyse-de-données",
           title: 'Analyse de données',
           description: "Python et Data Sciences",
